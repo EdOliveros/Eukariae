@@ -104,7 +104,7 @@ const Productos = () => {
                 flex-direction: column;
                 justify-content: end;
                 align-items: center;
-                padding: 10px;
+                padding: 7px;
             }
             .titulo {
                 font-size: 20px;
@@ -118,7 +118,7 @@ const Productos = () => {
         
             }
             .resumen {
-                font-size: 14px;
+                font-size: 13px;
                 width: 100%;
         
             }

@@ -12,8 +12,8 @@ const Footer = () => {
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    width: '20px',
-                    height: '20px',
+                    width: '100%',
+                    height: '100%',
                     borderRadius: '50%',
                 }} src={logo} alt="logo"></Image>
             </figure>
@@ -22,8 +22,8 @@ const Footer = () => {
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    width: '20px',
-                    height: '20px',
+                    width: '100%',
+                    height: '100%',
                     borderRadius: '50%',
                 }} src={logo} alt="logo"></Image>
             </figure>
@@ -32,8 +32,8 @@ const Footer = () => {
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    width: '20px',
-                    height: '20px',
+                    width: '100%',
+                    height: '100%',
                     borderRadius: '50%',
                 }} src={logo} alt="logo"></Image>
             </figure>
@@ -42,8 +42,8 @@ const Footer = () => {
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    width: '20px',
-                    height: '20px',
+                    width: '100%',
+                    height: '100%',
                     borderRadius: '50%',
                 }} src={rayita} alt="logo"></Image>
             </figure>
@@ -52,8 +52,8 @@ const Footer = () => {
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    width: '20px',
-                    height: '20px',
+                    width: '100%',
+                    height: '100%',
                     borderRadius: '50%',
                 }} src={logo} alt="logo"></Image>
             </figure>
@@ -62,8 +62,8 @@ const Footer = () => {
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    width: '20px',
-                    height: '20px',
+                    width: '100%',
+                    height: '100%',
                     borderRadius: '50%',
                 }} src={logo} alt="logo"></Image>
             </figure>
@@ -72,8 +72,8 @@ const Footer = () => {
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    width: '20px',
-                    height: '20px',
+                    width: '100%',
+                    height: '100%',
                     borderRadius: '50%',
                 }} src={logo} alt="logo"></Image>
             </figure>
@@ -82,8 +82,8 @@ const Footer = () => {
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    width: '20px',
-                    height: '20px',
+                    width: '100%',
+                    height: '100%',
                     borderRadius: '50%',
                 }} src={logo} alt="logo"></Image>
             </figure>
@@ -92,8 +92,8 @@ const Footer = () => {
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    width: '20px',
-                    height: '20px',
+                    width: '100%',
+                    height: '100%',
                     borderRadius: '50%',
                 }} src={logo} alt="logo"></Image>
             </figure>
@@ -122,6 +122,8 @@ const Footer = () => {
             justify-content: center;
             align-items: center;
             margin: 13px;
+            width: 20px;
+            height: 20px;
             
         }
         .mas-info-container {
@@ -138,6 +140,30 @@ const Footer = () => {
             margin: 30px;
             align-items: center;
             font-size: 13px;
+        }
+        @media(max-width: 500px) {
+            .logos-container figure {
+                width: 15px;
+                height: 15px;
+            }
+            .mas-info-container p {
+                font-size: 9px;
+            }
+        }
+        @media(max-width: 300px) {
+            .logos-container figure {
+                width: 0;
+                height: 0;
+            }
+            .mas-info-container {
+                flex-direction: column;
+                height: auto;
+            }
+            .mas-info-container p {
+                margin: 5px;
+                align-items: center;
+                font-size: 9px;
+            }
         }
         
         `}</style>

@@ -23,8 +23,8 @@ const Header = () => {
         <ul className="menu-container">
             <li>
                 <Link style={{
-                   fontSize: '18px',
-                   margin: '0 6px',
+                   fontSize: '17px',
+                   margin: '0 20px',
                    textDecoration: 'none',
                    color: 'black',
                    fontWeight: '500',
@@ -32,7 +32,7 @@ const Header = () => {
             </li>
             <li>
                 <Link style={{
-                   fontSize: '18px',
+                   fontSize: '17px',
                    margin: '0 6p',
                    textDecoration: 'none',
                    color: 'black',
@@ -41,8 +41,8 @@ const Header = () => {
             </li>
             <li>
                 <Link style={{
-                   fontSize: '18px',
-                   margin: '0 6px',
+                   fontSize: '17px',
+                   margin: '0 20px',
                    textDecoration: 'none',
                    color: 'black',
                    fontWeight: '500',
@@ -50,8 +50,8 @@ const Header = () => {
             </li>
             <li>
                 <Link style={{
-                   fontSize: '18px',
-                   margin: '0 6px',
+                   fontSize: '17px',
+                   margin: '0 20px',
                    textDecoration: 'none',
                    color: 'black',
                    fontWeight: '500',
@@ -59,8 +59,8 @@ const Header = () => {
             </li>
             <li>
                 <Link style={{
-                   fontSize: '18px',
-                   margin: '0 6px',
+                   fontSize: '17px',
+                   margin: '0 20px',
                    textDecoration: 'none',
                    color: 'black',
                    fontWeight: '500',
@@ -120,7 +120,7 @@ const Header = () => {
           align-items: center;
         }
 
-        @media (max-width: 700px) {
+        @media (max-width: 900px) {
           
           .menu-container li {
             display: none;
@@ -137,7 +137,7 @@ const Header = () => {
         }
         
         }
-        @media (min-width: 701px) {
+        @media (min-width: 901px) {
           .div-vacio .container {
             display: none;
             }

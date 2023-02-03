@@ -2,6 +2,7 @@ import React from 'react';
 import logo from '../../public/assets/logo.png'
 import Image from 'next/image';
 import menu from '../../public/assets/GRAD0.svg'
+import Link from 'next/link';
 
 const Header = () => {
   return (
@@ -21,19 +22,49 @@ const Header = () => {
         
         <ul className="menu-container">
             <li>
-                <a href="">HOME</a>
+                <Link style={{
+                   fontSize: '18px',
+                   margin: '0 6px',
+                   textDecoration: 'none',
+                   color: 'black',
+                   fontWeight: '500',
+                }} href="/">HOME</Link>
             </li>
             <li>
-                <a href="">BLOG</a>
+                <Link style={{
+                   fontSize: '18px',
+                   margin: '0 6p',
+                   textDecoration: 'none',
+                   color: 'black',
+                   fontWeight: '500',
+                }}href="/blog">BLOG</Link>
             </li>
             <li>
-                <a href="">PRODUCTS</a>
+                <Link style={{
+                   fontSize: '18px',
+                   margin: '0 6px',
+                   textDecoration: 'none',
+                   color: 'black',
+                   fontWeight: '500',
+                }}href="/productos">PRODUCTS</Link>
             </li>
             <li>
-                <a href="">QUIENES SOMOS?</a>
+                <Link style={{
+                   fontSize: '18px',
+                   margin: '0 6px',
+                   textDecoration: 'none',
+                   color: 'black',
+                   fontWeight: '500',
+                }}href="/quienes-somos">QUIENES SOMOS?</Link>
             </li>
             <li>
-                <a href="">CONTACTO</a>
+                <Link style={{
+                   fontSize: '18px',
+                   margin: '0 6px',
+                   textDecoration: 'none',
+                   color: 'black',
+                   fontWeight: '500',
+                }}href="/contacto">CONTACTO</Link>
             </li>
         </ul>
 
@@ -76,13 +107,7 @@ const Header = () => {
         .menu-container li {
             list-style: none;
         }
-        .menu-container li a {
-            font-size: 18px;
-            margin: 0 6px;
-            text-decoration: none;
-            color: black;
-            font-weight: 500;
-        }
+        
         .div-vacio {
             width: 15vw;
             display: flex;

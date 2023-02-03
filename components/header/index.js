@@ -4,12 +4,20 @@ import Image from 'next/image';
 import menu from '../../public/assets/GRAD0.svg'
 import Link from 'next/link';
 
+function toggleMenu() {
+ const menu = document.querySelector('.menu-flotante-container')
+ if(menu.classList.contains('inactive')) {
+  menu.classList.remove('inactive')
+ } else {
+  menu.classList.add('inactive')
+ }
+ console.log("escuchando")
+};
+
+
 const Header = () => {
   return (
-  
-  
 
-    
       <header className="header">
         <div className="img-container">
             <figure>
@@ -70,16 +78,53 @@ const Header = () => {
 
         <div className="div-vacio">
           <div className='container'>
-            <Image style={{
+            <Image
+            
+            onClick={() => toggleMenu()}
+            
+            style={{
                   width: '40px',
                   height: 'auto',
                 }} src={menu} alt="Logo">
             </Image>
-          </div>
-          
-          
+          </div> 
         </div>
-                
+        
+
+        <div className="menu-flotante-container inactive">
+        <ul>
+            <li>
+                <Link style={{
+                  textDecoration: 'none',
+                  color: 'black',
+                }}href="/">Home</Link>
+            </li>
+            <li>
+                <Link style={{
+                  textDecoration: 'none',
+                  color: 'black',
+                }}href="/blog">Blog</Link>
+            </li>
+            <li>
+                <Link style={{
+                  textDecoration: 'none',
+                  color: 'black',
+                }}href="/productos">Products</Link>
+            </li>
+            <li>
+                <Link style={{
+                  textDecoration: 'none',
+                  color: 'black',
+                }}href="/quienes-somos">Quienes Somos?</Link>
+            </li>
+            <li>
+                <Link style={{
+                  textDecoration: 'none',
+                  color: 'black',
+                }}href="/contacto">Contacto</Link>
+            </li>
+        </ul>
+    </div>
 
       <style jsx >{`
       
@@ -119,6 +164,9 @@ const Header = () => {
           justify-content: end;
           align-items: center;
         }
+        .container:hover {
+          cursor: pointer;
+        }
 
         @media (max-width: 900px) {
           
@@ -141,6 +189,31 @@ const Header = () => {
           .div-vacio .container {
             display: none;
             }
+        }
+
+
+
+        .menu-flotante-container {
+          display: flex;
+          flex-direction: column;
+          width: 100px;
+          height: auto;
+          border: 1px solid black;
+          border-radius: 10px;
+          padding: 10px;
+          justify-content: end;
+          align-items: center;
+          background-color: #CAC2B5;
+          position: absolute;
+          top: 107px;
+          right: 10px;
+        }
+        .inactive {
+          display: none;
+        }
+        .menu-flotante-container ul li {
+            text-align: end;
+            list-style: none;
         }
 
       `}</style>

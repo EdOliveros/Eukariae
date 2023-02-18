@@ -6,27 +6,32 @@ const productos = () => {
 
   const products = [
     {
-      title: "bolso",
+      title: "BOLSO",
       img: img,
       price: 123.00,
     },
     {
-      title: "chaqueta",
+      title: "CHAQUETA",
       img: img,
       price: 123.00,
     },
     {
-      title: "cuaderno",
+      title: "CUADERNO",
       img: img,
       price: 123.00,
     },
     {
-      title: "Zapatos",
+      title: "ZAPATOS",
       img: img,
       price: 123.00,
     },
     {
-      title: "Reloj",
+      title: "RELOJ",
+      img: img,
+      price: 123.00,
+    },
+    {
+      title: "RELOJ",
       img: img,
       price: 123.00,
     },
@@ -41,8 +46,15 @@ const productos = () => {
   return (
     <div>
       <div className='hero'>
-        <figure>
-          <Image style={estilo} src={""} alt=""></Image>
+        <figure className='img-container'>
+          <Image style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+          }} src={img} alt=""></Image>
+          <span className='title-container'>
+            <p className='title'>COMPRA AHORA!</p>
+          </span>
         </figure>
       </div>
       <div className='products-container'>
@@ -54,7 +66,7 @@ const productos = () => {
                   <Image style={estilo} src={item.img} alt="imagen"></Image>
                 </figure>
                 <div className='info-container'>
-                  <p className='title'>{item.title}</p>
+                  <p className='name'>{item.title}</p>
                   <p className='price'>{item.price}</p>
                 </div>
               </div>
@@ -65,18 +77,36 @@ const productos = () => {
         .hero {
           width: 100%;
           height: 500px;
+          margin-bottom: 10px;
+        }
+        .img-container {
+          width: 100%;
+          height: 100%;
+          padding: 30px 60px 0 60px;
+        }
+        .title-container {
+          position: absolute;
+          top: 500px;
+          right: 50%;
+          transform: translateX(+50%);
+          background-color: white;
+        }
+        .title {
+          font-weight: 400;
+          font-size: 20px;
         }
         .products-container {
+          margin-top: 10px;
           height: auto;
-          padding: 20px;
+          padding: 20px 60px;
           display: flex;
           justify-content: center;
           align-items: center;
           flex-wrap: wrap;
         }
         .product-container {
-          width: 200px;
-          height: 300px;
+          width: 230px;
+          height: 330px;
           margin: 10px;
           display: flex;
           justify-content: center;
@@ -89,7 +119,7 @@ const productos = () => {
           flex-direction: column;
           align-items: center;
         }
-        .title {
+        .name {
           font-weight: 400;
           font-size: 14px;
         }

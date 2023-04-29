@@ -196,24 +196,36 @@ const Header = () => {
         .menu-flotante-container {
           display: flex;
           flex-direction: column;
-          width: 100px;
+          width: 120px;
           height: auto;
           border: 1px solid black;
           border-radius: 10px;
-          padding: 10px;
-          justify-content: end;
+          padding: 15px;
+          justify-content: center;
           align-items: center;
           background-color: #CAC2B5;
           position: absolute;
           top: 107px;
           right: 10px;
+          z-index: 10;
         }
+
+        .menu-flotante-container ul {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          padding: 0;
+          margin: 0;
+        }
+
         .inactive {
           display: none;
         }
         .menu-flotante-container ul li {
-            text-align: end;
-            list-style: none;
+          text-align: center;
+          list-style: none;
+          margin-bottom: 5px;
         }
 
       `}</style>

@@ -2,9 +2,10 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/contacto": "pages/contacto.js",
-  "/productos": "pages/productos.js",
-  "/quienes-somos": "pages/quienes-somos.js",
-  "/blog": "pages/blog.js",
-  "/": "pages/index.js"
+  "/blog": "pages/blog.html",
+  "/contacto": "pages/contacto.html",
+  "/": "pages/index.html",
+  "/productos": "pages/productos.html",
+  "/quienes-somos": "pages/quienes-somos.html",
+  "/404": "pages/404.html"
 }

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "NODE_OPTIONS='inspect' next",
     "build": "next build",
-    "start": "next start",
+    "start": "next build && next start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

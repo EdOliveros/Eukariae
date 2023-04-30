@@ -11,7 +11,7 @@ const Home = () => {
             <Galeria/>
             <About/>
             <Entradas/>
-            <Productos/>
+            <Productos cantidad='4'/>
         </div>
     );
 };

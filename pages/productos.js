@@ -1,47 +1,11 @@
 import React from 'react'
 import Image from 'next/image'
 import img from '@public/assets/01.jpg'
+import { Productos } from '@components/Productos/Productos.js'
 
 const productos = () => {
 
-  const products = [
-    {
-      title: "BOLSO",
-      img: img,
-      price: 123.00,
-    },
-    {
-      title: "CHAQUETA",
-      img: img,
-      price: 123.00,
-    },
-    {
-      title: "CUADERNO",
-      img: img,
-      price: 123.00,
-    },
-    {
-      title: "ZAPATOS",
-      img: img,
-      price: 123.00,
-    },
-    {
-      title: "RELOJ",
-      img: img,
-      price: 123.00,
-    },
-    {
-      title: "RELOJ",
-      img: img,
-      price: 123.00,
-    },
-  ]
-
-  const estilo = {
-    width: '200px',
-    height: '250px',
-    objectFit: 'cover',
-  }
+  
 
   return (
     <div>
@@ -57,22 +21,7 @@ const productos = () => {
           </span>
         </figure>
       </div>
-      <div className='products-container'>
-        {
-          products.map(item => (
-            item.innerHTML = 
-              <div className='product-container'>
-                <figure>
-                  <Image style={estilo} src={item.img} alt="imagen"></Image>
-                </figure>
-                <div className='info-container'>
-                  <p className='name'>{item.title}</p>
-                  <p className='price'>{item.price}</p>
-                </div>
-              </div>
-          ))
-        }
-      </div>
+      <Productos cantidad='6'/>
       <style jsx>{`
         .hero {
           width: 100%;
@@ -94,37 +43,6 @@ const productos = () => {
         .title {
           font-weight: 400;
           font-size: 20px;
-        }
-        .products-container {
-          margin-top: 10px;
-          height: auto;
-          padding: 20px 60px;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-wrap: wrap;
-        }
-        .product-container {
-          width: 230px;
-          height: 330px;
-          margin: 10px;
-          display: flex;
-          justify-content: center;
-          flex-direction: column;
-          align-items: center;
-        }
-        .info-container {
-          display: flex;
-          justify-content: flex-start;
-          flex-direction: column;
-          align-items: center;
-        }
-        .name {
-          font-weight: 400;
-          font-size: 14px;
-        }
-        .price {
-          font-size: 12px;
         }
       `}</style>
     </div>

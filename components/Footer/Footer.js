@@ -65,9 +65,9 @@ const Footer = () => {
                 }} src={rayita} alt="logo"></Image>
             </figure>
             <figure className="icons ">
-                 <Image s
+                 <Image 
                  className="img-fluid rounded-circle"
-                 tyle={{
+                 style={{
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',

@@ -10,12 +10,15 @@
   ],
   "rootMainFiles": [],
   "pages": {
+<<<<<<< HEAD
     "/": [
       "static/chunks/webpack-59c5c889f52620d6.js",
       "static/chunks/framework-2c79e2a64abdb08b.js",
       "static/chunks/main-a0dca5a2ff5035f1.js",
       "static/chunks/pages/index-796212654e070dec.js"
     ],
+=======
+>>>>>>> dev
     "/_app": [
       "static/chunks/webpack-59c5c889f52620d6.js",
       "static/chunks/framework-2c79e2a64abdb08b.js",
@@ -35,6 +38,7 @@
       "static/chunks/main-a0dca5a2ff5035f1.js",
       "static/chunks/pages/blog-680b491497d14788.js"
     ],
+<<<<<<< HEAD
     "/contacto": [
       "static/chunks/webpack-59c5c889f52620d6.js",
       "static/chunks/framework-2c79e2a64abdb08b.js",
@@ -52,6 +56,12 @@
       "static/chunks/framework-2c79e2a64abdb08b.js",
       "static/chunks/main-a0dca5a2ff5035f1.js",
       "static/chunks/pages/quienes-somos-2716ff06c0d2200b.js"
+=======
+    "/blog": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/blog.js"
+>>>>>>> dev
     ]
   },
   "ampFirstPages": []

@@ -49,14 +49,14 @@ const Productos = (props) => {
         height: 'auto',
       }
     const estiloImg = {
-        width: '300px',
+        width: '100%',
         height: '300px',
         objectFit: 'cover',
     }
 
   return (
     <>
-    <div className='content-fluid d-flex flex-wrap justify-content-center m-5'>
+    <div className='content-fluid d-flex flex-wrap justify-content-center '>
         {
           result.map((item) => (
             item.innerHTML = 

@@ -133,16 +133,17 @@ const Blog = () => {
                             e.innerHTML = 
                             <>
                             <button 
-                            style={{
-                                textDecoration: 'none',
-                                color: 'black',
-                                border: 'none !important'
-                            }} 
-                            type="button" 
-                            class="bg-transparent anchor text-end" 
-                            data-bs-toggle="modal" 
-                            data-bs-target={`#${e.myId}`}
-                            >
+                                style={{
+                                    textDecoration: 'none',
+                                    color: 'black',
+                                    border: 'none !important',
+                                    width: '100%',
+                                }} 
+                                type="button" 
+                                class="bg-transparent anchor text-end" 
+                                data-bs-toggle="modal" 
+                                data-bs-target={`#${e.myId}`}
+                                >
                                 <div className="text-end cir">
                                     .
                                 </div>
@@ -188,15 +189,24 @@ const Blog = () => {
                     {
                         articulosOpinion.map((e) => ( 
                             e.innerHTML = 
-                            <Link 
-                            style={{
-                                textDecoration: 'none',
-                                color: 'black',
-                            }} 
-                            className="anchor" href="#">
+
+                            <>
+
+                            <button 
+                                style={{
+                                    textDecoration: 'none',
+                                    color: 'black',
+                                    border: 'none !important',
+                                    width: '100%',
+                                }} 
+                                type="button" 
+                                class="bg-transparent anchor text-start" 
+                                data-bs-toggle="modal" 
+                                data-bs-target={`#${e.myId}`}
+                                >
                                 <div className="entrada-right">
                                     <p className="gris fecha">{e.categoria} |</p>
-                                    <p className="fecha">| 01.20.2023</p>
+                                    <p className="fecha">| {e.fecha}</p>
                                     <figure>
                                         <Image style={estyle} src={e.imagen} alt="img-entrada"></Image>
                                     </figure>
@@ -205,7 +215,28 @@ const Blog = () => {
                                         {e.resumen}
                                     </p>
                                 </div>
-                            </Link>
+                            </button>
+
+                            <div className="modal fade" id={e.myId} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div className="modal-dialog modal-fullscreen">
+                                    <div className="modal-content">
+                                    <div className="modal-header">
+                                        <h1 className="modal-title fs-5" id="exampleModalLabel">{e.titulo}</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div className="modal-body">
+                                        
+                                        <iframe width="560" height="315" src={`https://www.youtube.com/embed/${e.youtube}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                        <p>{e.contenido}</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            </>
                         ))
                     }
                     
@@ -213,49 +244,50 @@ const Blog = () => {
                 </div>
             
                 <style jsx>{`
-                        .mi-col {
-                            margin-top: 60px !important;
-                        }
-                        .entrada-left {
+                    .mi-col {
+                        margin-top: 60px !important;
+                    }
+                    .entrada-left {
                         border-right: 1px solid rgb(0, 0, 0);
                         padding: 0 20px 0 0;
+                        width: 100%;
+                    }
+                    .entrada-right {
+                        margin: 0 0 40px 0;
+                    }
+                    .cir {
+                        font-size: 40px;
+                    }
+                    .gris {
+                        color: rgb(90, 90, 90);
+                    }
+                    .fecha {
+                        font-size: 13px;
+                    }
+
+                    @media(max-width: 770px) {
+                        .entrada-right {
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+                            flex-direction: column;
+                            border-bottom: 1px solid black;
+                            margin-top: 15px !important;
+                        }
+                        .entrada-left {
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+                            flex-direction: column;
+                            border-right: 0;
+                            padding: 0;
+                            border-bottom: 1px solid black;
+                            margin-top: 15px !important;
                         }
                         .cir {
-                            font-size: 40px;
+                            display: none;
                         }
-                        .gris {
-                            color: rgb(90, 90, 90);
-                        }
-                        .fecha {
-                            font-size: 13px;
-                        }
-                        .entrada-right {
-                            margin: 0 0 40px 0;
-                        }
-
-                        @media(max-width: 770px) {
-                            .entrada-right {
-                                width: 100%;
-                                display: flex;
-                                align-items: center;
-                                flex-direction: column;
-                                border-bottom: 1px solid black;
-                                margin-top: 15px !important;
-                            }
-                            .entrada-left {
-                                width: 100%;
-                                display: flex;
-                                align-items: center;
-                                flex-direction: column;
-                                border-right: 0;
-                                padding: 0;
-                                border-bottom: 1px solid black;
-                                margin-top: 15px !important;
-                            }
-                            .cir {
-                                display: none;
-                            }
-                        }
+                    }
                 `}</style>
             </div>
 

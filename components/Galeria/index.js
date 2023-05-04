@@ -1,20 +1,27 @@
 import React from 'react'
-import imageGaleri from '@public/assets/galeria.png'
+import imageGaleri1 from '@public/assets/Wall-papers-4K_Danta.jpg'
+import imageGaleri2 from '@public/assets/Wall-papers-4K_Epitome.jpg'
+import imageGaleri3 from '@public/assets/Wall-papers-4K_Jaguar.jpg'
+import imageGaleri4 from '@public/assets/Wall-papers-4K_Rana.jpg'
 import Image from 'next/image'
 // You can specify which plugins you need
 
 const Galeria = () => {
   return (
+    <>
     <div id="carouselExampleControls" className="carousel slide" data-bs-ride="carousel">
       <div className="carousel-inner">
         <div className="carousel-item active">
-          <Image src={imageGaleri} className="d-block w-100 img-fluid" alt="..."></Image>
+          <Image src={imageGaleri1} className="d-block img-fluid" alt="..."></Image>
         </div>
         <div className="carousel-item">
-          <Image src={imageGaleri} className="d-block w-100 img-fluid" alt="..."></Image>
+          <Image src={imageGaleri2} className="d-block img-fluid" alt="..."></Image>
         </div>
         <div className="carousel-item">
-          <Image src={imageGaleri} className="d-block w-100 img-fluid" alt="..."></Image>
+          <Image src={imageGaleri3} className="d-block img-fluid" alt="..."></Image>
+        </div>
+        <div className="carousel-item">
+          <Image src={imageGaleri4} className="d-block img-fluid" alt="..."></Image>
         </div>
       </div>
       <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -26,6 +33,12 @@ const Galeria = () => {
         <span className="visually-hidden">Next</span>
       </button>
     </div>
+
+    <style jsx>{`
+      
+    `}</style>
+
+    </>
   )
 }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import portada from '@public/assets/ranita.png'
-import img from '@public/assets/01.jpg'
+import img from '@public/assets/Wall-papers-4K_Epitome.jpg'
 
 const Productos = (props) => {
 

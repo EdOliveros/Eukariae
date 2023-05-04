@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import img from '@public/assets/01.jpg'
+import img from '@public/assets/Wall-papers-4K_Jaguar.jpg'
 import { Productos } from '@components/Productos/Productos.js'
 
 const productos = () => {

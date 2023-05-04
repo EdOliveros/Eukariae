@@ -28,7 +28,7 @@ const Footer = () => {
                     borderRadius: '50%',
                 }} src={facebook} alt="logo"></Image>
             </figure>
-            <figure className="icons ">
+            <a href='https://www.instagram.com/eukariae/' target="_blank" className="icons">
             <Image 
             className="img-fluid rounded-circle"
             style={{
@@ -39,7 +39,7 @@ const Footer = () => {
                     height: '100%',
                     borderRadius: '50%',
                 }} src={instagram} alt="logo"></Image>
-            </figure>
+            </a>
             <figure className="icons ">
             <Image 
             className="img-fluid rounded-circle"

@@ -1,7 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import imgUrl from '@public/assets/ranita.png'
 import mimg from '@public/assets/logo.png'
 
 const Blog = () => {
@@ -13,7 +12,9 @@ const Blog = () => {
             fecha: "2023-05-03",
             contenido: "En este artículo te enseñaremos paso a paso cómo preparar un café perfecto para disfrutar en casa o en la oficina...",
             resumen: 'este es un resumen de cada capitulo para no poner todo el texto',
-            imagen: mimg
+            imagen: mimg,
+            youtube: 'lmu1AxXA2Xc',
+            myId: 'v'
         },
         {
             titulo: "Los mejores ejercicios para mantenerse en forma",
@@ -21,7 +22,9 @@ const Blog = () => {
             categoria: 'categoria',
             contenido: "¿Quieres estar en forma pero no sabes por dónde empezar? En este artículo te presentamos los mejores ejercicios para mantenerse saludable y en forma...",
             resumen: 'este es un resumen de cada capitulo para no poner todo el texto',
-            imagen: mimg
+            imagen: mimg,
+            youtube: 'lmu1AxXA2Xc',
+            myId: 'vyyjy'
         },
         {
             titulo: "Consejos para viajar con poco presupuesto",
@@ -29,7 +32,9 @@ const Blog = () => {
             categoria: 'categoria',
             contenido: "¿Quieres viajar pero tienes un presupuesto limitado? En este artículo te damos algunos consejos para ahorrar dinero durante tus viajes...",
             resumen: 'este es un resumen de cada capitulo para no poner todo el texto',
-            imagen: mimg
+            imagen: mimg,
+            youtube: 'lmu1AxXA2Xc',
+            myId: 'vcgu'
         },
         {
             titulo: "La importancia del cuidado de la piel",
@@ -37,7 +42,9 @@ const Blog = () => {
             categoria: 'categoria',
             contenido: "¿Quieres tener una piel radiante y saludable? En este artículo te explicamos por qué es importante cuidar tu piel y te damos algunos consejos para lograrlo...",
             resumen: 'este es un resumen de cada capitulo para no poner todo el texto',
-            imagen: mimg
+            imagen: mimg,
+            youtube: 'lmu1AxXA2Xc',
+            myId: 'vtrhtyn'
         },
         {
             titulo: "Consejos para mejorar tu concentración en el trabajo",
@@ -45,7 +52,9 @@ const Blog = () => {
             categoria: 'categoria',
             contenido: "¿Tienes dificultades para concentrarte en el trabajo? En este artículo te damos algunos consejos para mejorar tu concentración y productividad en el trabajo...",
             resumen: 'este es un resumen de cada capitulo para no poner todo el texto',
-            imagen: mimg
+            imagen: mimg,
+            youtube: 'lmu1AxXA2Xc',
+            myId: 'vdjhyj'
         },
         
     ]
@@ -57,7 +66,9 @@ const Blog = () => {
             fecha: "2023-05-03",
             contenido: "En este artículo te enseñaremos paso a paso cómo preparar un café perfecto para disfrutar en casa o en la oficina...",
             resumen: 'este es un resumen de cada capitulo para no poner todo el texto',
-            imagen: mimg
+            imagen: mimg,
+            youtube: 'lmu1AxXA2Xc',
+            myId: 'vtdd'
         },
         {
             titulo: "Los mejores ejercicios para mantenerse en forma",
@@ -65,7 +76,9 @@ const Blog = () => {
             categoria: 'categoria',
             contenido: "¿Quieres estar en forma pero no sabes por dónde empezar? En este artículo te presentamos los mejores ejercicios para mantenerse saludable y en forma...",
             resumen: 'este es un resumen de cada capitulo para no poner todo el texto',
-            imagen: mimg
+            imagen: mimg,
+            youtube: 'lmu1AxXA2Xc',
+            myId: 'vuyg'
         },
         {
             titulo: "Consejos para viajar con poco presupuesto",
@@ -73,7 +86,9 @@ const Blog = () => {
             categoria: 'categoria',
             contenido: "¿Quieres viajar pero tienes un presupuesto limitado? En este artículo te damos algunos consejos para ahorrar dinero durante tus viajes...",
             resumen: 'este es un resumen de cada capitulo para no poner todo el texto',
-            imagen: mimg
+            imagen: mimg,
+            youtube: 'lmu1AxXA2Xc',
+            myId: 'vouys'
         },
         {
             titulo: "La importancia del cuidado de la piel",
@@ -81,7 +96,9 @@ const Blog = () => {
             categoria: 'categoria',
             contenido: "¿Quieres tener una piel radiante y saludable? En este artículo te explicamos por qué es importante cuidar tu piel y te damos algunos consejos para lograrlo...",
             resumen: 'este es un resumen de cada capitulo para no poner todo el texto',
-            imagen: mimg
+            imagen: mimg,
+            youtube: 'lmu1AxXA2Xc',
+            myId: 'verbcd'
         },
         {
             titulo: "Consejos para mejorar tu concentración en el trabajo",
@@ -89,7 +106,9 @@ const Blog = () => {
             categoria: 'categoria',
             contenido: "¿Tienes dificultades para concentrarte en el trabajo? En este artículo te damos algunos consejos para mejorar tu concentración y productividad en el trabajo...",
             resumen: 'este es un resumen de cada capitulo para no poner todo el texto',
-            imagen: mimg
+            imagen: mimg,
+            youtube: 'lmu1AxXA2Xc',
+            myId: 'veee'
         },
         
     ]
@@ -112,12 +131,18 @@ const Blog = () => {
                     {
                         articulosInvestigacion.map((e) => ( 
                             e.innerHTML = 
-                            <Link 
+                            <>
+                            <button 
                             style={{
                                 textDecoration: 'none',
                                 color: 'black',
+                                border: 'none !important'
                             }} 
-                            className="anchor text-end" href="#">
+                            type="button" 
+                            class="bg-transparent anchor text-end" 
+                            data-bs-toggle="modal" 
+                            data-bs-target={`#${e.myId}`}
+                            >
                                 <div className="text-end cir">
                                     .
                                 </div>
@@ -132,7 +157,28 @@ const Blog = () => {
                                         ${e.resumen}
                                     </p>
                                 </div>
-                            </Link>
+                            </button>
+                            
+                            <div className="modal fade" id={e.myId} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div className="modal-dialog modal-fullscreen">
+                                    <div className="modal-content">
+                                    <div className="modal-header">
+                                        <h1 className="modal-title fs-5" id="exampleModalLabel">{e.titulo}</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div className="modal-body">
+                                        
+                                        <iframe width="560" height="315" src={`https://www.youtube.com/embed/${e.youtube}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                        <p>{e.contenido}</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            </>
                         ))
                     }
                 
@@ -185,10 +231,6 @@ const Blog = () => {
                         }
                         .entrada-right {
                             margin: 0 0 40px 0;
-                        }
-                        .anchor p {
-                            text-decoration: none;
-                            color: black;
                         }
 
                         @media(max-width: 770px) {

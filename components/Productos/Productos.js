@@ -32,7 +32,7 @@ const Productos = (props) => {
           price: 123.00,
         },
         {
-          title: "RELOJ",
+          title: "Maleta",
           img: img,
           price: 123.00,
         },
@@ -61,32 +61,32 @@ const Productos = (props) => {
           result.map((item) => (
             item.innerHTML = 
 
-            <>
-            <div className="card m-5" style={estilo}>
+            <div key={item.title}>
+            <div className="card m-5" style={estilo} >
                 <Image style={estiloImg} src={item.img} className="card-img-top" alt="..."></Image>
                 <div className="card-body">
                     <h5 className="card-title">{ item.title }</h5>
                     <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <button type="button" class="btn" data-bs-toggle="modal" data-bs-target={`#${item.title}`} >
+                    <button type="button" className="btn" data-bs-toggle="modal" data-bs-target={`#${item.title}`} >
                         Ver detalle
                     </button>
                 </div>
             </div>
 
 
-            <div class="modal fade" id={item.title} tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-lg">
-                    <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="productModalLabel">Detalles del producto</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <div className="modal fade" id={item.title} tabIndex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+                <div className="modal-dialog modal-dialog-centered modal-lg">
+                    <div className="modal-content">
+                    <div className="modal-header">
+                        <h5 className="modal-title" id="productModalLabel">Detalles del producto</h5>
+                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body">
-                        <div class="d-flex flex-row flex-wrap justify-content-center">
-                        <div class="p-2">
-                            <Image style={estiloImg} src={item.img} alt="Product image" class="img-fluid" />
+                    <div className="modal-body">
+                        <div className="d-flex flex-row flex-wrap justify-content-center">
+                        <div className="p-2">
+                            <Image style={estiloImg} src={item.img} alt="Product image" className="img-fluid" />
                         </div>
-                        <div class="p-2 flex-fill">
+                        <div className="p-2 flex-fill">
                             <h3>{item.title}</h3>
                             <p>Descripción corta del producto</p>
                             <hr />
@@ -99,14 +99,14 @@ const Productos = (props) => {
                         </div>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn ">Agregar al carrito</button>
+                    <div className="modal-footer">
+                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" className="btn ">Agregar al carrito</button>
                     </div>
                     </div>
                 </div>
             </div>
-            </>
+            </div>
           ))
         }
     </div>

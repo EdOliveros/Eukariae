@@ -1,7 +1,8 @@
 import React from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
 import mimg from '@public/assets/logo.png'
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 const Blog = () => {
 
@@ -131,18 +132,13 @@ const Blog = () => {
                     {
                         articulosInvestigacion.map((e) => ( 
                             e.innerHTML = 
-                            <>
+                            <div key={e.myId}>
                             <button 
-                                style={{
-                                    textDecoration: 'none',
-                                    color: 'black',
-                                    border: 'none !important',
-                                    width: '100%',
-                                }} 
                                 type="button" 
-                                class="bg-transparent anchor text-end" 
+                                className="bg-transparent anchor text-end my-button" 
                                 data-bs-toggle="modal" 
                                 data-bs-target={`#${e.myId}`}
+                                key={e.myId}
                                 >
                                 <div className="text-end cir">
                                     .
@@ -160,26 +156,26 @@ const Blog = () => {
                                 </div>
                             </button>
                             
-                            <div className="modal fade" id={e.myId} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div className="modal fade" id={e.myId} tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div className="modal-dialog modal-fullscreen">
                                     <div className="modal-content">
                                     <div className="modal-header">
                                         <h1 className="modal-title fs-5" id="exampleModalLabel">{e.titulo}</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div className="modal-body">
                                         
-                                        <iframe width="560" height="315" src={`https://www.youtube.com/embed/${e.youtube}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                        <iframe width="560" height="315" src={`https://www.youtube.com/embed/${e.youtube}`} title="YouTube video player" frameorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                                         <p>{e.contenido}</p>
                                     </div>
-                                    <div class="modal-footer">
+                                    <div className="modal-footer">
                                         <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                     </div>
                                     </div>
                                 </div>
                             </div>
 
-                            </>
+                            </div>
                         ))
                     }
                 
@@ -190,19 +186,14 @@ const Blog = () => {
                         articulosOpinion.map((e) => ( 
                             e.innerHTML = 
 
-                            <>
+                            <div key={e.myId}>
 
                             <button 
-                                style={{
-                                    textDecoration: 'none',
-                                    color: 'black',
-                                    border: 'none !important',
-                                    width: '100%',
-                                }} 
                                 type="button" 
-                                class="bg-transparent anchor text-start" 
+                                className="bg-transparent anchor text-start my-button" 
                                 data-bs-toggle="modal" 
                                 data-bs-target={`#${e.myId}`}
+                                key={e.myId}
                                 >
                                 <div className="entrada-right">
                                     <p className="gris fecha">{e.categoria} |</p>
@@ -217,26 +208,26 @@ const Blog = () => {
                                 </div>
                             </button>
 
-                            <div className="modal fade" id={e.myId} tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div className="modal fade" id={e.myId} tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div className="modal-dialog modal-fullscreen">
                                     <div className="modal-content">
                                     <div className="modal-header">
                                         <h1 className="modal-title fs-5" id="exampleModalLabel">{e.titulo}</h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     </div>
                                     <div className="modal-body">
                                         
-                                        <iframe width="560" height="315" src={`https://www.youtube.com/embed/${e.youtube}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                        <iframe width="560" height="315" src={`https://www.youtube.com/embed/${e.youtube}`} title="YouTube video player" frameorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowFullScreen></iframe>
                                         <p>{e.contenido}</p>
                                     </div>
-                                    <div class="modal-footer">
+                                    <div className="modal-footer">
                                         <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                     </div>
                                     </div>
                                 </div>
                             </div>
 
-                            </>
+                            </div>
                         ))
                     }
                     

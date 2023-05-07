@@ -7,3 +7,10 @@
     font-family: 'Poppins', sans-serif;
     font-weight: 300;
 }
+
+.my-button {
+    text-decoration: none !important;
+    color: black;
+    border: none !important;
+    width: 100%;
+}

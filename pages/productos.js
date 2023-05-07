@@ -2,10 +2,9 @@ import React from 'react'
 import Image from 'next/image'
 import img from '@public/assets/Wall-papers-4K_Jaguar.jpg'
 import { Productos } from '@components/Productos/Productos.js'
+import { products as pro } from '@components/dataBase/products.js'
 
 const productos = () => {
-
-  
 
   return (
     <div>
@@ -21,7 +20,7 @@ const productos = () => {
           </span>
         </figure>
       </div>
-      <Productos cantidad='6'/>
+      <Productos cantidad={pro.length}/>
       <style jsx>{`
         .hero {
           width: 100%;

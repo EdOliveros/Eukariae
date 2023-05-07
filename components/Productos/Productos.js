@@ -1,47 +1,46 @@
 import React from 'react';
 import Image from 'next/image';
-import portada from '@public/assets/ranita.png'
-import img from '@public/assets/Wall-papers-4K_Epitome.jpg'
+import { products as productos } from '@components/dataBase/products.js';
 
 const Productos = (props) => {
 
-    const products = [
-        {
-          title: "BOLSO",
-          img: portada,
-          price: 123.00,
-        },
-        {
-          title: "CHAQUETA",
-          img: img,
-          price: 123.00,
-        },
-        {
-          title: "CUADERNO",
-          img: img,
-          price: 123.00,
-        },
-        {
-          title: "ZAPATOS",
-          img: img,
-          price: 123.00,
-        },
-        {
-          title: "RELOJ",
-          img: img,
-          price: 123.00,
-        },
-        {
-          title: "Maleta",
-          img: img,
-          price: 123.00,
-        },
-      ]
+    // const products = [
+    //     {
+    //       title: "BOLSO",
+    //       img: portada,
+    //       price: 123.00,
+    //     },
+    //     {
+    //       title: "CHAQUETA",
+    //       img: img,
+    //       price: 123.00,
+    //     },
+    //     {
+    //       title: "CUADERNO",
+    //       img: img,
+    //       price: 123.00,
+    //     },
+    //     {
+    //       title: "ZAPATOS",
+    //       img: img,
+    //       price: 123.00,
+    //     },
+    //     {
+    //       title: "RELOJ",
+    //       img: img,
+    //       price: 123.00,
+    //     },
+    //     {
+    //       title: "Maleta",
+    //       img: img,
+    //       price: 123.00,
+    //     },
+    //   ]
 
      const result = []
 
     for(let i = 0; i < props.cantidad; i++) {
-        result.push(products[i])
+        result.push(productos[i])
     }
 
     const estilo = {
@@ -63,18 +62,18 @@ const Productos = (props) => {
 
             <div key={item.title}>
             <div className="card m-5" style={estilo} >
-                <Image style={estiloImg} src={item.img} className="card-img-top" alt="..."></Image>
+                <Image style={estiloImg} src={item.src} className="card-img-top" alt="..."></Image>
                 <div className="card-body">
                     <h5 className="card-title">{ item.title }</h5>
                     <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <button type="button" className="btn" data-bs-toggle="modal" data-bs-target={`#${item.title}`} >
+                    <button type="button" className="btn" data-bs-toggle="modal" data-bs-target={`#${item.id}`} >
                         Ver detalle
                     </button>
                 </div>
             </div>
 
 
-            <div className="modal fade" id={item.title} tabIndex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+            <div className="modal fade" id={item.id} tabIndex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
                 <div className="modal-dialog modal-dialog-centered modal-lg">
                     <div className="modal-content">
                     <div className="modal-header">
@@ -84,11 +83,12 @@ const Productos = (props) => {
                     <div className="modal-body">
                         <div className="d-flex flex-row flex-wrap justify-content-center">
                         <div className="p-2">
-                            <Image style={estiloImg} src={item.img} alt="Product image" className="img-fluid" />
+                            <Image style={estiloImg} src={item.src} alt="Product image" className="img-fluid" />
                         </div>
                         <div className="p-2 flex-fill">
                             <h3>{item.title}</h3>
-                            <p>Descripción corta del producto</p>
+                            <p>{item.price}</p>
+                            <p>{item.description}</p>
                             <hr />
                             <h4>Detalles</h4>
                             <ul>

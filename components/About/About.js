@@ -8,7 +8,7 @@ const About = () => {
       <div className="info-container">
           <h2>Quienes Somos?</h2>
           <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse minima illo iusto laboriosam vitae voluptas minus eveniet! Officiis, tempora tempore consectetur quas eveniet voluptatum iusto sint nesciunt omnis quam suscipit.
+            Eukariae es una página de divulgación y educación científica creada por la bióloga Sara Orjuela y el arquitecto Juan Gómez que muestra por medio de ilustraciones digitales las especies endémicas y más vulnerables de Colombia, enfocada en la comunidad no científica con el propósito de que se interesen y aprendan sobre las principales problemáticas que amenazan a estas especies. Nosotros, como Eukariae queremos compartir y acercarnos un poco más a esta comunidad que hemos conformado, que se interesa por las especies de fauna y flora de Colombia, así como el proceso creativo que hay detrás cada una de nuestras ilustraciones.
           </p>
       </div>
       <figure className="ranita-container">

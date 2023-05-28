@@ -1,5 +1,4 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
- 
 
 class MyDocument extends Document {
     
@@ -7,7 +6,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          
+        <link rel="shortcut icon" href="@public/assets/favicon.ico" />
         </Head>
         <body>
           <Main />

@@ -4,39 +4,6 @@ import { products as productos } from '@components/dataBase/products.js';
 
 const Productos = (props) => {
 
-    // const products = [
-    //     {
-    //       title: "BOLSO",
-    //       img: portada,
-    //       price: 123.00,
-    //     },
-    //     {
-    //       title: "CHAQUETA",
-    //       img: img,
-    //       price: 123.00,
-    //     },
-    //     {
-    //       title: "CUADERNO",
-    //       img: img,
-    //       price: 123.00,
-    //     },
-    //     {
-    //       title: "ZAPATOS",
-    //       img: img,
-    //       price: 123.00,
-    //     },
-    //     {
-    //       title: "RELOJ",
-    //       img: img,
-    //       price: 123.00,
-    //     },
-    //     {
-    //       title: "Maleta",
-    //       img: img,
-    //       price: 123.00,
-    //     },
-    //   ]
-
      const result = []
 
     for(let i = 0; i < props.cantidad; i++) {
@@ -65,7 +32,7 @@ const Productos = (props) => {
                 <Image style={estiloImg} src={item.src} className="card-img-top" alt="..."></Image>
                 <div className="card-body">
                     <h5 className="card-title">{ item.title }</h5>
-                    <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <p className="card-text">{ item.detail }</p>
                     <button type="button" className="btn" data-bs-toggle="modal" data-bs-target={`#${item.id}`} >
                         Ver detalle
                     </button>

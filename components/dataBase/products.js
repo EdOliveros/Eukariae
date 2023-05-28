@@ -20,104 +20,119 @@ export const products = [
         description: "Cuadro flotante con ilustraciones de nuestra fauna colombiana. Dimensiones: 23cm x 28cm (4cm de grosor) El precio incluye el envío a Bogotá.",
         src: cuadro,
         price: "40.000,00 COP",
+        detail: 'Cuadro flotante con ilustraciones de nuestra fauna colombiana, marco de manera y doble vidrio. (23cm x 28cmx4cm)',
         id: 'wrgrtr'
     },
     {
-        "title": "Tula felinos",
+        title: "Tula felinos",
         description: "Especificaciones: Las dimensiones de la Tula son 29cm de ancho y 39cm de largo con forro antifluidos, con cordones gruesos y resistentes. 🔥Tiene un diseño por cada lado! El precio incluye el envío a Bogotá.",
         src: felino,
         price: "50.000,00 COP",
+        detail: 'Tula con diseños originales de la fauna colombiana por ambos lados. 100% poliéster, forro antifluidos, con cordones gruesos y resistentes (29x39cm)',
         id: 'wrrfgrt'
     },
     {
-        "title": "Tula rana dorada venenosa",
+        title: "Tula rana dorada venenosa",
         description: "Especificaciones: Las dimensiones de la Tula son 29cm de ancho y 39cm de largo con forro antifluidos, con cordones gruesos y resistentes. 🔥Tiene un diseño por cada lado! El precio incluye el envío a Bogotá.",
         src: rana,
         price: "50.000,00 COP",
+        detail: 'Tula con diseños originales de la fauna colombiana por ambos lados. 100% poliéster, forro antifluidos, con cordones gruesos y resistentes (29x39cm)',
         id: 'wrhsgrt'
     },
     {
-        "title": "Tula Danta de montaña",
+        title: "Tula Danta de montaña",
         description: "Especificaciones: Las dimensiones de la Tula son 29cm de ancho y 39cm de largo con forro antifluidos, con cordones gruesos y resistentes. 🔥Tiene un diseño por cada lado! El precio incluye el envío a Bogotá.",
         src: danta,
         price: "50.000,00 COP",
+        detail: 'Tula con diseños originales de la fauna colombiana por ambos lados. 100% poliéster, forro antifluidos, con cordones gruesos y resistentes (29x39cm)',
         id: 'wrgkurt'
     },
     {
-        "title": "Tula tortuga Carey",
+        title: "Tula tortuga Carey",
         description: "Especificaciones: Las dimensiones de la Tula son 29cm de ancho y 39cm de largo con forro antifluidos, con cordones gruesos y resistentes. 🔥Tiene un diseño por cada lado! El precio incluye el envío a Bogotá.",
         src: tortuga,
         price: "50.000,00 COP",
+        detail: 'Tula con diseños originales de la fauna colombiana por ambos lados. 100% poliéster, forro antifluidos, con cordones gruesos y resistentes (29x39cm)',
         id: 'wrgssrt'
     },
     {
-        "title": "Tula búho llanero",
+        title: "Tula búho llanero",
         description: "Especificaciones: Las dimensiones de la Tula son 29cm de ancho y 39cm de largo con forro antifluidos, con cordones gruesos y resistentes.🔥Tiene un diseño por cada lado! El precio incluye el envío a Bogotá.",
         src: buho,
         price: "50.000,00 COP",
+        detail: 'Tula con diseños originales de la fauna colombiana por ambos lados. 100% poliéster, forro antifluidos, con cordones gruesos y resistentes (29x39cm)',
         id: 'wrarggrt'
     },
     {
-        "title": "Tula ballena",
+        title: "Tula ballena",
         description: "Especificaciones: Las dimensiones de la Tula son 29cm de ancho y 39cm de largo con forro antifluidos, con cordones gruesos y resistentes.🔥Tiene un diseño por cada lado! El precio incluye el envío a Bogotá.",
         src: ballena,
         price: "50.000,00 COP",
+        detail: 'Tula con diseños originales de la fauna colombiana por ambos lados. 100% poliéster, forro antifluidos, con cordones gruesos y resistentes (29x39cm)',
         id: 'wrgthrt'
     },
     {
-        "title": "Tula mono titi",
+        title: "Tula mono titi",
         description: "Especificaciones: Las dimensiones de la Tula son 29cm de ancho y 39cm de largo con forro antifluidos, con cordones gruesos y resistentes.🔥Tiene un diseño por cada lado! El precio incluye el envío a Bogotá.",
         src: titi,
         price: "50.000,00 COP",
+        detail: 'Tula con diseños originales de la fauna colombiana por ambos lados. 100% poliéster, forro antifluidos, con cordones gruesos y resistentes (29x39cm)',
         id: 'wrgafyrt'
     },
     {
-        "title": "Mini tula felinos",
+        title: "Mini tula felinos",
         description: "Especificaciones: Las dimensiones de la Tula son 14cm de ancho y 22cm de largo con forro antifluidos, con cordones delgados.🔥Tiene un diseño por cada lado! El precio incluye el envío a Bogotá.",
         src: miniFelino,
         price: "18.000,00 COP",
+        detail: 'Mini Tula con diseños originales de la fauna colombiana por ambos lados. 100% poliéster, forro antifluidos, con cordones gruesos y resistentes (14x22cm). El precio incluye el envío a Bogotá',
         id: 'wrthyjgrt'
     },
     {
-        "title": "Mini tula rana dorada venenosa",
+        title: "Mini tula rana dorada venenosa",
         description: "Especificaciones: Las dimensiones de la Tula son 14cm de ancho y 22cm de largo con forro antifluidos, con cordones delgados.🔥Tiene un diseño por cada lado! El precio incluye el envío a Bogotá.",
         src: miniRana,
         price: "18.000,00 COP",
+        detail: 'Mini Tula con diseños originales de la fauna colombiana por ambos lados. 100% poliéster, forro antifluidos, con cordones gruesos y resistentes (14x22cm). El precio incluye el envío a Bogotá',
         id: 'wrgg6jrt'
     },
     {
-        "title": "Mini tula danta de montaña",
+        title: "Mini tula danta de montaña",
         description: "Especificaciones: Las dimensiones de la Tula son 14cm de ancho y 22cm de largo con forro antifluidos, con cordones delgados.🔥Tiene un diseño por cada lado! El precio incluye el envío a Bogotá.",
         src: miniDanta,
         price: "17.000,00 COP",
+        detail: 'Mini Tula con diseños originales de la fauna colombiana por ambos lados. 100% poliéster, forro antifluidos, con cordones gruesos y resistentes (14x22cm). El precio incluye el envío a Bogotá',
         id: 'orrt'
     },
     {
-        "title": "Mini tula tortuga Carey",
+        title: "Mini tula tortuga Carey",
         description: "Especificaciones: Las dimensiones de la Tula son 14cm de ancho y 22cm de largo con forro antifluidos, con cordones delgados.🔥Tiene un diseño por cada lado! El precio incluye el envío a Bogotá.",
         src: miniTortuga,
         price: "18.000,00 COP",
+        detail: 'Mini Tula con diseños originales de la fauna colombiana por ambos lados. 100% poliéster, forro antifluidos, con cordones gruesos y resistentes (14x22cm). El precio incluye el envío a Bogotá',
         id: 'wrvbbngrt'
     },
     {
-        "title": "Mini tula búho llanero",
+        title: "Mini tula búho llanero",
         description: "Especificaciones: Las dimensiones de la Tula son 14cm de ancho y 22cm de largo con forro antifluidos, con cordones delgados.🔥Tiene un diseño por cada lado! El precio incluye el envío a Bogotá.",
         src: miniBuho,
         price: "18.000,00 COP",
+        detail: 'Mini Tula con diseños originales de la fauna colombiana por ambos lados. 100% poliéster, forro antifluidos, con cordones gruesos y resistentes (14x22cm). El precio incluye el envío a Bogotá',
         id: 'wruytfgrt'
     },
     {
-        "title": "Mini tula ballena",
+        title: "Mini tula ballena",
         description: "Especificaciones: Las dimensiones de la Tula son 14cm de ancho y 22cm de largo con forro antifluidos, con cordones delgados.🔥Tiene un diseño por cada lado! El precio incluye el envío a Bogotá.",
         src: miniBallena,
         price: "18.000,00 COP",
+        detail: 'Mini Tula con diseños originales de la fauna colombiana por ambos lados. 100% poliéster, forro antifluidos, con cordones gruesos y resistentes (14x22cm). El precio incluye el envío a Bogotá',
         id: 'wfgrgrt'
     },
     {
-        "title": "Mini tula mono titi",
+        title: "Mini tula mono titi",
         description: "Especificaciones: Las dimensiones de la Tula son 14cm de ancho y 22cm de largo con forro antifluidos, con cordones delgados.🔥Tiene un diseño por cada lado! El precio incluye el envío a Bogotá.",
         src: miniTiti,
         price: "18.000,00 COP",
+        detail: 'Mini Tula con diseños originales de la fauna colombiana por ambos lados. 100% poliéster, forro antifluidos, con cordones gruesos y resistentes (14x22cm). El precio incluye el envío a Bogotá',
         id: 'wriuytgrt'
     }
 ]

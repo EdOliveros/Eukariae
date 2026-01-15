@@ -1,8 +1,11 @@
 import { Layout } from "../components/Layout/Layout";
 import '../styles/global.css';
 import { useEffect } from "react";
+import { useApi } from "../hooks/useApi.js";
 
 export default function MyApp({ Component, pageProps }) {
+    const { data: config } = useApi('/config');
+
     useEffect(() => {
         const theme = localStorage.getItem('theme') || 'light';
         document.body.setAttribute('data-theme', theme);
@@ -14,7 +17,7 @@ export default function MyApp({ Component, pageProps }) {
     }, []);
 
     return (
-        <Layout>
+        <Layout config={config}>
             <Component {...pageProps} />
         </Layout>
     )

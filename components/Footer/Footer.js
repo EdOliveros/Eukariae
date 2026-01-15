@@ -11,12 +11,14 @@ import paypal from '@public/assets/paypal-color-icon.png'
 import pagoSeguro from '@public/assets/online-secure-payment-icon.png'
 import pagoOnline from '@public/assets/vip-label-icon.png'
 
-const Footer = () => {
+import { UPLOADS_BASE_URL } from '../../config/api.js'
+
+const Footer = ({ config }) => {
     const socialIcons = [
-        { src: facebook, alt: 'Facebook' },
-        { src: instagram, alt: 'Instagram', href: 'https://www.instagram.com/eukariae/' },
-        { src: pinterest, alt: 'Pinterest' },
-        { src: rayita, alt: 'Logo' },
+        { src: facebook, alt: 'Facebook', href: config?.socialLinks?.facebook },
+        { src: instagram, alt: 'Instagram', href: config?.socialLinks?.instagram || 'https://www.instagram.com/eukariae/' },
+        { src: pinterest, alt: 'Pinterest', href: config?.socialLinks?.twitter }, // Using twitter as placeholder for pinterest in my model
+        { src: rayita, alt: 'Separator' },
     ];
 
     const paymentIcons = [

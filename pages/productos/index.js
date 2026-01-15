@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import img from '@public/assets/Wall-papers-4K_Jaguar.jpg'
 import { Productos } from '@components/Productos/Productos.js'
 import CollectionCard from '@components/Productos/CollectionCard.js'
-import { products as pro, collections } from '@components/Database/products.js'
+import { useApi } from '../../hooks/useApi.js'
 
 const productos = () => {
-  const showCollections = collections && collections.length > 1;
+  const { data: productsData, loading: productsLoading, error: productsError } = useApi('/products');
+  const { data: categoriesData } = useApi('/categories');
+
+  const products = productsData || [];
+  const categories = categoriesData || [];
+  const showCollections = categories && categories.length > 0;
 
   return (
     <div className="bg-bg-base dark:bg-[#121212] transition-colors duration-300">
@@ -43,13 +48,17 @@ const productos = () => {
         {showCollections ? (
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-              {collections.map((collection) => (
-                <CollectionCard key={collection.id} collection={collection} />
+              {categories.map((collection) => (
+                <CollectionCard key={collection._id} collection={collection} />
               ))}
+            </div>
+            {/* Show all products below collections */}
+            <div className="mt-20">
+              <Productos items={products} loading={productsLoading} error={productsError} />
             </div>
           </div>
         ) : (
-          <Productos cantidad={pro.length} />
+          <Productos items={products} loading={productsLoading} error={productsError} />
         )}
       </div>
     </div>

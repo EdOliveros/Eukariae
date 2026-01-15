@@ -1,9 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import logo from '../../public/assets/logo.png'
-import Image from 'next/image';
-import Link from 'next/link';
+import { UPLOADS_BASE_URL } from '../../config/api.js';
 
-const Header = () => {
+const Header = ({ config }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
@@ -41,6 +38,8 @@ const Header = () => {
     { name: 'Contact', href: '/contacto' },
   ];
 
+  const logoSrc = (config && config.logo) ? `${UPLOADS_BASE_URL}/${config.logo}` : logo;
+
   return (
     <header className="sticky top-0 z-[1050] bg-primary dark:bg-[#2c2c2c] text-text-base dark:text-[#e0e0e0] shadow-base transition-all duration-300 py-3 px-6 md:px-12">
       <nav className="container mx-auto flex items-center justify-between">
@@ -50,9 +49,9 @@ const Header = () => {
             <Image
               width={60}
               height={60}
-              src={logo}
-              alt="Logo"
-              className="h-auto w-full"
+              src={logoSrc}
+              alt={config?.siteName || "Logo"}
+              className="h-auto w-full object-contain"
             />
           </Link>
         </div>

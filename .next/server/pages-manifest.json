@@ -1,11 +1,12 @@
 {
-  "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
   "/_app": "pages/_app.js",
-  "/blog": "pages/blog.js",
-  "/productos/[id]": "pages/productos/[id].js",
-  "/": "pages/index.js",
-  "/contacto": "pages/contacto.js",
-  "/productos": "pages/productos.js",
-  "/quienes-somos": "pages/quienes-somos.js"
+  "/_document": "pages/_document.js",
+  "/blog": "pages/blog.html",
+  "/contacto": "pages/contacto.html",
+  "/": "pages/index.html",
+  "/productos/[id]": "pages/productos/[id].html",
+  "/productos": "pages/productos.html",
+  "/quienes-somos": "pages/quienes-somos.html",
+  "/_error": "pages/_error.js",
+  "/404": "pages/404.html"
 }

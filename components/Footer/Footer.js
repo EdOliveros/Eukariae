@@ -12,154 +12,69 @@ import pagoSeguro from '@public/assets/online-secure-payment-icon.png'
 import pagoOnline from '@public/assets/vip-label-icon.png'
 
 const Footer = () => {
-  return (
-    <footer>
-        <div className="container">
-    <div className="container-fluid d-flex flex-wrap justify-content-center my-5 align-items-center">
-    <figure className="icons ">
-                <Image 
-                className="img-fluid rounded-circle"
-                style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    width: '100%',
-                    height: '100%',
-                    borderRadius: '50%',
-                }} src={facebook} alt="logo"></Image>
-            </figure>
-            <a href='https://www.instagram.com/eukariae/' target="_blank" className="icons">
-            <Image 
-            className="img-fluid rounded-circle"
-            style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    width: '100%',
-                    height: '100%',
-                    borderRadius: '50%',
-                }} src={instagram} alt="logo"></Image>
-            </a>
-            <figure className="icons ">
-            <Image 
-            className="img-fluid rounded-circle"
-            style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    width: '100%',
-                    height: '100%',
-                    borderRadius: '50%',
-                }} src={pinterest} alt="logo"></Image>
-            </figure>
-            <figure className="icons ">
-            <Image 
-            className="img-fluid rounded-circle"
-            style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    width: '100%',
-                    height: '100%',
-                    borderRadius: '50%',
-                }} src={rayita} alt="logo"></Image>
-            </figure>
-            <figure className="icons ">
-                 <Image 
-                 className="img-fluid rounded-circle"
-                 style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    width: '100%',
-                    height: '100%',
-                    borderRadius: '50%',
-                }} src={visa} alt="logo"></Image>
-            </figure>
-            <figure className="icons ">
-                 <Image 
-                 className="img-fluid rounded-circle"
-                 style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    width: '100%',
-                    height: '100%',
-                    borderRadius: '50%',
-                }} src={master} alt="logo"></Image>
-            </figure>
-            <figure className="icons ">
-                 <Image 
-                 className="img-fluid rounded-circle"
-                 style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    width: '100%',
-                    height: '100%',
-                    borderRadius: '50%',
-                }} src={paypal} alt="logo"></Image>
-            </figure>
-            <figure className="icons ">
-                 <Image 
-                 className="img-fluid rounded-circle"
-                 style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    width: '100%',
-                    height: '100%',
-                    borderRadius: '50%',
-                }} src={pagoSeguro} alt="logo"></Image>
-            </figure>
-            <figure className="icons ">
-                 <Image style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    width: '100%',
-                    height: '100%',
-                    borderRadius: '50%',
-                }} src={pagoOnline} alt="logo"></Image>
-            </figure>
-    </div>
+    const socialIcons = [
+        { src: facebook, alt: 'Facebook' },
+        { src: instagram, alt: 'Instagram', href: 'https://www.instagram.com/eukariae/' },
+        { src: pinterest, alt: 'Pinterest' },
+        { src: rayita, alt: 'Logo' },
+    ];
 
-  </div>
-       
+    const paymentIcons = [
+        { src: visa, alt: 'Visa' },
+        { src: master, alt: 'Mastercard' },
+        { src: paypal, alt: 'Paypal' },
+        { src: pagoSeguro, alt: 'Secure Payment' },
+        { src: pagoOnline, alt: 'Online Payment' },
+    ];
 
-        <div className="row justify-content-center my-4 mas-info-container">
-            <div className="col-12 col-md-3">
-                <p className="text-center">HELP & INFORMATION</p>
-            </div>
-            <div className="col-12 col-md-3">
-                <p className="text-center">ABOUT US</p>
-            </div>
-            <div className="col-12 col-md-3">
-                <p className="text-center">MORE FROM ASOS</p>
-            </div>
-            <div className="col-12 col-md-3">
-                <p className="text-center">SHOPPING FROM:</p>
-            </div>
-        </div>
+    const infoSections = [
+        'HELP & INFORMATION',
+        'ABOUT EUKARIAE',
+        'OUR MISSION',
+        'CONSERVATION',
+    ];
 
-        <style jsx>{`
-        
-        .icons {
-            width: 50px;
-            margin: 10px;
-        }            
-        .mas-info-container {
-            background-color:  rgb(228, 228, 228);
-            padding: 20px 0;
-            margin: 0;
-        }
-        .mas-info-container p {
-            margin: 0;
-        }
-        
-        `}</style>
-    </footer>
-  )
+    return (
+        <footer className="mt-auto bg-bg-base dark:bg-[#121212] text-text-base dark:text-[#e0e0e0] transition-colors duration-300">
+            <div className="container mx-auto px-6 py-12">
+                {/* Icons Section */}
+                <div className="flex flex-wrap justify-center items-center gap-6 mb-12">
+                    {[...socialIcons, ...paymentIcons].map((icon, index) => (
+                        <div key={index} className="w-10 transition-transform duration-300 hover:-translate-y-1 cursor-pointer">
+                            {icon.href ? (
+                                <a href={icon.href} target="_blank" rel="noopener noreferrer">
+                                    <Image
+                                        src={icon.src}
+                                        alt={icon.alt}
+                                        className="rounded-full w-full h-auto"
+                                    />
+                                </a>
+                            ) : (
+                                <Image
+                                    src={icon.src}
+                                    alt={icon.alt}
+                                    className="rounded-full w-full h-auto"
+                                />
+                            )}
+                        </div>
+                    ))}
+                </div>
+            </div>
+
+            {/* Info Grid Section */}
+            <div className="bg-secondary dark:bg-[#3a3a3a] py-10">
+                <div className="container mx-auto px-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                        {infoSections.map((section) => (
+                            <div key={section}>
+                                <p className="font-bold text-sm tracking-widest">{section}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </footer>
+    )
 }
 
-export {Footer}
+export { Footer }

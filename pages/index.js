@@ -5,13 +5,19 @@ import { Productos } from '@components/Productos/Productos';
 import React from 'react';
 
 const Home = () => {
-    
-    return(
+
+    return (
         <div>
-            <Galeria/>
-            <About/>
-            <Entradas/>
-            <Productos cantidad='4'/>
+            <Galeria />
+            <section id="about">
+                <About />
+            </section>
+            <section id="entradas">
+                <Entradas />
+            </section>
+            <section id="productos">
+                <Productos cantidad='4' />
+            </section>
         </div>
     );
 };

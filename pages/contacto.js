@@ -1,12 +1,12 @@
 import React from 'react'
-import { Contacto } from '../components/contacto/contacto'
-import { InfoContacto } from '../components/info-contacto/info-contacto'
+import { Contacto } from '../components/Contacto/contacto'
+import { InfoContacto } from '../components/InfoContacto/info-contacto'
 
 const contacto = () => {
   return (
     <div>
-      <InfoContacto/>
-      <Contacto/>
+      <InfoContacto />
+      <Contacto />
     </div>
   )
 }

@@ -1,60 +1,63 @@
-# Eukariae Shop
+# Eukariae - Modern E-Commerce Platform
 
-Bienvenido al repositorio de **Eukariae**, una tienda en línea dedicada a la venta de productos exclusivos de la marca Eukariae. Este proyecto está diseñado para ofrecer una experiencia de compra fluida y moderna.
+Bienvenido al repositorio de **Eukariae**, una tienda en línea moderna y exclusiva para productos de la marca Eukariae. Este proyecto ha sido renovado para ofrecer una experiencia de usuario de primer nivel, con un diseño fresco, responsivo y una arquitectura de código optimizada.
 
-## 🚀 Acerca del Proyecto
+## 🚀 Características
 
-Eukariae es una plataforma de comercio electrónico construida con tecnologías modernas para asegurar rendimiento y escalabilidad.
+- **Diseño Moderno & Responsivo**: Interfaz de usuario limpia y minimalista, optimizada para todos los dispositivos (móvil, tablet, escritorio).
+- **Arquitectura Escalable**: Estructura de código organizada con componentes reutilizables y convenciones claras.
+- **Rendimiento Optimizado**: Uso de las últimas características de Next.js y optimización de imágenes.
+- **Estilos Globales**: Sistema de diseño basado en variables CSS para una fácil personalización y mantenimiento.
 
-## 🛠️ Tecnologías Utilizadas
+## 🛠️ Tecnologías
 
-Este proyecto utiliza las siguientes dependencias y tecnologías clave:
+Este proyecto está construido sobre un stack robusto y moderno:
 
-*   **[Next.js](https://nextjs.org/)** (v13.1.6): Framework de React para producción, utilizado por sus capacidades de renderizado híbrido y enrutamiento.
-*   **[React](https://reactjs.org/)** (v18.2.0): Biblioteca para construir interfaces de usuario interactivas.
-*   **[Bootstrap](https://getbootstrap.com/)** (v5.2.3): Framework CSS para el diseño responsivo y componentes UI preconstruidos.
-*   **[Sass](https://sass-lang.com/)**: Preprocesador CSS para escribir estilos más limpios y mantenibles.
-*   **next-images**: Utilidad para una mejor gestión de imágenes en Next.js.
+*   **[Next.js](https://nextjs.org/)**: Framework de React para producción, renderizado híbrido y enrutamiento.
+*   **[React](https://reactjs.org/)**: Biblioteca UI para componentes interactivos.
+*   **[Bootstrap 5](https://getbootstrap.com/)**: Framework CSS para el sistema de rejilla y componentes base.
+*   **CSS Modules & Global Styles**: Gestión de estilos flexible y potente.
 
 ## 📋 Requisitos Previos
 
-Antes de comenzar, asegúrate de tener instalado:
+Asegúrate de tener instalado:
 
-*   [Node.js](https://nodejs.org/) (versión recomendada LTS)
-*   [npm](https://www.npmjs.com/) (normalmente incluido con Node.js)
+*   [Node.js](https://nodejs.org/) (LTS recomendado)
+*   [npm](https://www.npmjs.com/)
 
-## 💻 Instalación y Ejecución Local
+## 💻 Instalación y Desarrollo
 
-Sigue estos pasos para correr el proyecto en tu máquina local:
-
-1.  **Clonar el repositorio** (si aún no lo has hecho) o navegar a la carpeta del proyecto:
+1.  **Clonar el repositorio**:
     ```bash
-    cd /home/ed-oliveros/Documents/Portfolio/Eukariae
+    git clone <url-del-repo>
+    cd Eukariae
     ```
 
 2.  **Instalar dependencias**:
-    Ejecuta el siguiente comando para descargar todas las librerías necesarias listadas en `package.json`:
     ```bash
     npm install
     ```
 
-3.  **Iniciar el servidor de desarrollo**:
-    Una vez instaladas las dependencias, corre el servidor local:
+3.  **Iniciar servidor de desarrollo**:
     ```bash
     npm run dev
     ```
+    Visita [http://localhost:3000](http://localhost:3000) para ver la aplicación.
 
-4.  **Ver la aplicación**:
-    Abre tu navegador web y visita [http://localhost:3000](http://localhost:3000) para ver la tienda en funcionamiento.
+## 📁 Estructura del Proyecto
 
-## 🔧 Scripts Disponibles
+```
+Eukariae/
+├── components/       # Componentes reutilizables (Header, Footer, Productos, etc.)
+├── pages/            # Rutas y páginas de la aplicación
+├── public/           # Activos estáticos (imágenes, iconos)
+├── styles/           # Estilos globales y variables CSS
+└── ...config files
+```
 
-En el directorio del proyecto puedes ejecutar:
+## 🤝 Contribución
 
-*   `npm run dev`: Inicia la aplicación en modo desarrollo.
-*   `npm run build`: Compila la aplicación para producción.
-*   `npm run start`: Inicia el servidor de producción (requiere `npm run build` previo).
+Las contribuciones son bienvenidas. Por favor, abre un issue o envía un pull request para mejoras.
 
-## ✨ Agradecimientos
-
-Gracias por revisar este proyecto de Eukariae. ¡Esperamos que disfrutes de la experiencia!
+---
+Desarrollado con ❤️ para Eukariae.

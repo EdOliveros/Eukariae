@@ -1,38 +1,17 @@
-import React from 'react'
-import Image from 'next/image'
-import por from '@public/assets/capturas.png'
-import useScrollReveal from '../../hooks/useScrollReveal'
-import Link from 'next/link'
+import React from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+import useScrollReveal from '../../hooks/useScrollReveal';
+import { UPLOADS_BASE_URL } from '../../config/api.js';
 
-const blogPosts = [
-    {
-        id: 1,
-        title: "De como un pobre entierra a la mamá",
-        author: "JuanDiego",
-        date: "23 de febrero de 2023",
-        summary: "Una reflexión profunda sobre las tradiciones y las dificultades económicas en el duelo...",
-        image: por
-    },
-    {
-        id: 2,
-        title: "Biodiversidad en peligro",
-        author: "Sara Orjuela",
-        date: "10 de marzo de 2023",
-        summary: "Descubre las especies más amenazadas de nuestro ecosistema y cómo podemos ayudar...",
-        image: por
-    },
-    {
-        id: 3,
-        title: "El arte de ilustrar naturaleza",
-        author: "Juan Gómez",
-        date: "05 de abril de 2023",
-        summary: "El proceso creativo detrás de cada ilustración digital y la observación de campo...",
-        image: por
-    }
-];
 
-const Entradas = () => {
+const Entradas = ({ items = [], loading, error }) => {
     const [ref, isVisible] = useScrollReveal();
+
+    if (loading) return <div className="text-center py-20 text-2xl font-bold dark:text-white">Cargando blog...</div>;
+    if (error) return <div className="text-center py-20 text-2xl font-bold text-red-500">Error: {error}</div>;
+
+    const blogPosts = items.slice(0, 3); // Show only top 3 for homepage section
 
     return (
         <div className="bg-bg-base dark:bg-[#121212] py-20 transition-colors duration-300">
@@ -49,10 +28,10 @@ const Entradas = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
                     {blogPosts.map((post) => (
-                        <div key={post.id} className="group flex flex-col h-full bg-white dark:bg-card-bg rounded-base shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-gray-100 dark:border-gray-800">
+                        <div key={post._id || post.id} className="group flex flex-col h-full bg-white dark:bg-card-bg rounded-base shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-gray-100 dark:border-gray-800">
                             <div className="relative h-64 overflow-hidden">
                                 <Image
-                                    src={post.image}
+                                    src={`${UPLOADS_BASE_URL}/${post.image}`}
                                     alt={post.title}
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 />

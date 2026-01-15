@@ -1,3 +1,5 @@
+import Link from 'next/link';
+import Image from 'next/image';
 import { UPLOADS_BASE_URL } from '../../config/api.js';
 
 const CollectionCard = ({ collection }) => {

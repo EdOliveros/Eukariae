@@ -4,9 +4,11 @@ import { InfoContacto } from '../components/InfoContacto/info-contacto'
 
 const contacto = () => {
   return (
-    <div>
+    <div className="bg-bg-base dark:bg-[#121212] min-h-screen">
       <InfoContacto />
-      <Contacto />
+      <div className="pb-20">
+        <Contacto />
+      </div>
     </div>
   )
 }

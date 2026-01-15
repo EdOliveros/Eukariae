@@ -5,64 +5,34 @@ import { Productos } from '@components/Productos/Productos.js'
 import { products as pro } from '@components/Database/products.js'
 
 const productos = () => {
-
   return (
-    <div>
-      <div className='hero position-relative'>
-        <div className='img-container'>
-          <Image
-            src={img}
-            alt="Hero Image"
-            fill
-            style={{ objectFit: 'cover' }}
-            priority
-          />
-          <div className='overlay'></div>
-          <div className='title-container'>
-            <h1 className='title'>COMPRA AHORA!</h1>
+    <div className="bg-bg-base dark:bg-[#121212] transition-colors duration-300">
+      <div className="relative w-full h-[50vh] min-h-[400px] overflow-hidden">
+        <Image
+          src={img}
+          alt="Hero Products"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+          <div className="bg-white dark:bg-[#1e1e1e] px-10 py-6 rounded-base shadow-2xl transform hover:scale-105 transition-transform duration-500">
+            <h1 className="text-3xl md:text-4xl font-extrabold tracking-[0.2em] text-text-base dark:text-[#e0e0e0] uppercase">
+              Compra Ahora
+            </h1>
           </div>
         </div>
       </div>
-      <Productos cantidad={pro.length} />
-      <style jsx>{`
-        .hero {
-          width: 100%;
-          height: 60vh;
-          min-height: 400px;
-          margin-bottom: 2rem;
-        }
-        .img-container {
-          width: 100%;
-          height: 100%;
-          position: relative;
-        }
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.2);
-        }
-        .title-container {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          background-color: white;
-          padding: 1rem 2rem;
-          border-radius: var(--border-radius);
-          box-shadow: var(--shadow);
-          z-index: 2;
-        }
-        .title {
-          font-weight: 500;
-          font-size: 1.5rem;
-          margin: 0;
-          letter-spacing: 2px;
-          color: var(--text-color);
-        }
-      `}</style>
+
+      <div className="py-20">
+        <div className="container mx-auto px-6 text-center mb-12">
+          <h2 className="text-4xl font-bold dark:text-[#e0e0e0] mb-4">Nuestra Colección</h2>
+          <p className="text-gray-500 dark:text-gray-400 max-w-2xl mx-auto">
+            Piezas únicas inspiradas en la biodiversidad colombiana, diseñadas para los amantes de la naturaleza y el arte.
+          </p>
+        </div>
+        <Productos cantidad={pro.length} />
+      </div>
     </div>
   )
 }

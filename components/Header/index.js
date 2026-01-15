@@ -1,3 +1,7 @@
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import logo from '@public/assets/logo.png';
 import { UPLOADS_BASE_URL } from '../../config/api.js';
 
 const Header = ({ config }) => {

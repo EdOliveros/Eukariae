@@ -136,3 +136,27 @@ export const products = [
         id: 'wriuytgrt'
     }
 ]
+
+export const collections = [
+    {
+        id: 'tulas',
+        title: 'Colección Tulas',
+        description: 'Tulas resistentes con diseños originales de nuestra fauna, perfectas para el día a día.',
+        image: felino,
+        productIds: ['wrrfgrt', 'wrhsgrt', 'wrgkurt', 'wrgssrt', 'wrarggrt', 'wrgthrt', 'wrgafyrt']
+    },
+    {
+        id: 'mini-tulas',
+        title: 'Colección Mini Tulas',
+        description: 'La versión compacta de nuestras tulas, diseñada para llevar tus objetos esenciales con estilo.',
+        image: miniFelino,
+        productIds: ['wrthyjgrt', 'wrgg6jrt', 'orrt', 'wrvbbngrt', 'wruytfgrt', 'wfgrgrt', 'wriuytgrt']
+    },
+    {
+        id: 'decoracion',
+        title: 'Decoración',
+        description: 'Elementos únicos para darle un toque natural y artístico a tus espacios.',
+        image: cuadro,
+        productIds: ['wrgrtr']
+    }
+]

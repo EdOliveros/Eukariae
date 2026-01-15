@@ -5,7 +5,7 @@ import { products as productos } from '@components/Database/products.js';
 const Productos = (props) => {
     const [selectedProduct, setSelectedProduct] = useState(null);
 
-    const result = productos.slice(0, props.cantidad);
+    const result = props.items || productos.slice(0, props.cantidad);
 
     return (
         <div className="container mx-auto px-6 py-16">

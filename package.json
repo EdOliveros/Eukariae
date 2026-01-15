@@ -15,6 +15,7 @@
   "dependencies": {
     "@popperjs/core": "^2.11.7",
     "bootstrap": "^5.2.3",
+    "caniuse-lite": "1.0.30001580",
     "next": "^13.1.6",
     "next-images": "^1.8.4",
     "postcss-loader": "^7.3.0",

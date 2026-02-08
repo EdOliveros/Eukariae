@@ -12,6 +12,8 @@
     --bg-color: #ffffff;
     --card-bg: #ffffff;
     --modal-bg: #ffffff;
+    --logo-dark: var(--text-color);
+    --logo-light: var(--primary-color);
     --font-main: 'Poppins', sans-serif;
     --border-radius: 8px;
     --transition: all 0.3s ease;

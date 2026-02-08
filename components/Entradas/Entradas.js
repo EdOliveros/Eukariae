@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
+import SafeImage from '../UI/SafeImage';
 import Link from 'next/link';
 import useScrollReveal from '../../hooks/useScrollReveal';
 import { UPLOADS_BASE_URL } from '../../config/api.js';
@@ -30,9 +30,10 @@ const Entradas = ({ items = [], loading, error }) => {
                     {blogPosts.map((post) => (
                         <div key={post._id || post.id} className="group flex flex-col h-full bg-white dark:bg-card-bg rounded-base shadow-sm hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-gray-100 dark:border-gray-800">
                             <div className="relative h-64 overflow-hidden">
-                                <Image
+                                <SafeImage
                                     src={`${UPLOADS_BASE_URL}/${post.image}`}
                                     alt={post.title}
+                                    fill
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
                                 <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-500 flex items-center justify-center">

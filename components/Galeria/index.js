@@ -3,7 +3,7 @@ import imageGaleri1 from '@public/assets/Wall-papers-4K_Danta.jpg'
 import imageGaleri2 from '@public/assets/Wall-papers-4K_Epitome.jpg'
 import imageGaleri3 from '@public/assets/Wall-papers-4K_Jaguar.jpg'
 import imageGaleri4 from '@public/assets/Wall-papers-4K_Rana.jpg'
-import Image from 'next/image'
+import SafeImage from '../UI/SafeImage'
 import useScrollReveal from '../../hooks/useScrollReveal'
 import Link from 'next/link'
 
@@ -56,7 +56,7 @@ const Galeria = () => {
           className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
         >
           <div className="absolute inset-0 bg-black bg-opacity-30 z-20"></div>
-          <Image
+          <SafeImage
             src={slide.image}
             fill
             className="object-cover object-center w-full h-full"

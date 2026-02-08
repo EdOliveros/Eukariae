@@ -1,12 +1,24 @@
 import React, { useState } from 'react';
-import Image from 'next/image';
 import { UPLOADS_BASE_URL } from '../../config/api.js';
+import SafeImage from '../UI/SafeImage';
+import InfoNotFound from '../UI/InfoNotFound';
 
 const Productos = ({ items = [], loading, error }) => {
     const [selectedProduct, setSelectedProduct] = useState(null);
 
-    if (loading) return <div className="text-center py-20 text-2xl font-bold dark:text-white">Cargando productos...</div>;
+    if (loading) return <div className="text-center py-20 text-2xl font-bold dark:text-white animate-pulse">Cargando productos...</div>;
     if (error) return <div className="text-center py-20 text-2xl font-bold text-red-500">Error: {error}</div>;
+
+    if (!loading && items.length === 0) {
+        return (
+            <InfoNotFound
+                title="No hay productos disponibles"
+                message="Actualmente no tenemos productos en esta sección. Por favor, vuelve más tarde o explora otras categorías."
+                buttonText="Explorar colecciones"
+                redirectTo="/productos"
+            />
+        );
+    }
 
     return (
         <div className="container mx-auto px-6 py-16">
@@ -14,7 +26,7 @@ const Productos = ({ items = [], loading, error }) => {
                 {items.map((item) => (
                     <div key={item._id} className="group flex flex-col h-full bg-white dark:bg-card-bg rounded-base shadow-sm hover:shadow-base transition-all duration-300 transform hover:-translate-y-2">
                         <div className="relative h-64 overflow-hidden rounded-t-base">
-                            <Image
+                            <SafeImage
                                 width={500}
                                 height={500}
                                 src={`${UPLOADS_BASE_URL}/${item.image}`}
@@ -57,7 +69,7 @@ const Productos = ({ items = [], loading, error }) => {
                         <div className="p-8">
                             <div className="flex flex-col md:flex-row gap-8">
                                 <div className="md:w-1/2">
-                                    <Image
+                                    <SafeImage
                                         width={600}
                                         height={600}
                                         src={`${UPLOADS_BASE_URL}/${selectedProduct.image}`}

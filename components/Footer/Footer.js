@@ -1,5 +1,5 @@
 import React from 'react'
-import logo from '@public/assets/logo.png'
+import LogoSVG from '../LogoSVG'
 import rayita from '@public/assets/rayita.png'
 import Image from 'next/image'
 import facebook from '@public/assets/facebook-round-icon.png'

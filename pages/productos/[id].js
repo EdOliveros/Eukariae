@@ -1,6 +1,7 @@
 import React from 'react'
 import { useRouter } from 'next/router'
-import Image from 'next/image'
+import SafeImage from '@components/UI/SafeImage'
+import InfoNotFound from '@components/UI/InfoNotFound'
 import { Productos } from '@components/Productos/Productos.js'
 import { products, collections } from '@components/Database/products.js'
 
@@ -13,16 +14,13 @@ const CollectionPage = () => {
     if (!collection) {
         if (typeof window !== 'undefined' && !id) return null; // Wait for router
         return (
-            <div className="min-h-screen flex items-center justify-center bg-bg-base dark:bg-[#121212]">
-                <div className="text-center">
-                    <h1 className="text-4xl font-bold dark:text-white mb-4">Colección no encontrada</h1>
-                    <button
-                        onClick={() => router.push('/productos')}
-                        className="text-accent hover:underline font-semibold"
-                    >
-                        Volver a productos
-                    </button>
-                </div>
+            <div className="min-h-screen bg-bg-base dark:bg-[#121212] flex items-center justify-center">
+                <InfoNotFound
+                    title="Colección no encontrada"
+                    message="Lo sentimos, la colección que buscas no existe o ha sido movida."
+                    buttonText="Volver a productos"
+                    redirectTo="/productos"
+                />
             </div>
         )
     }
@@ -32,7 +30,7 @@ const CollectionPage = () => {
     return (
         <div className="bg-bg-base dark:bg-[#121212] transition-colors duration-300">
             <div className="relative w-full h-[60vh] min-h-[500px] overflow-hidden">
-                <Image
+                <SafeImage
                     src={collection.image}
                     alt={collection.title}
                     fill
@@ -63,3 +61,4 @@ const CollectionPage = () => {
 }
 
 export default CollectionPage
+

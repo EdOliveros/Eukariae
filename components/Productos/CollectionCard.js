@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Image from 'next/image';
+import SafeImage from '../UI/SafeImage';
 import { UPLOADS_BASE_URL } from '../../config/api.js';
 
 const CollectionCard = ({ collection }) => {
@@ -7,8 +7,8 @@ const CollectionCard = ({ collection }) => {
         <Link href={`/productos?category=${collection._id}`} className="group block h-full">
             <div className="flex flex-col h-full bg-white dark:bg-[#1e1e1e] rounded-base shadow-sm hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-transparent hover:border-accent/20">
                 <div className="relative h-72 overflow-hidden">
-                    <Image
-                        src={collection.image ? `${UPLOADS_BASE_URL}/${collection.image}` : '/assets/placeholder-collection.jpg'}
+                    <SafeImage
+                        src={collection.image ? `${UPLOADS_BASE_URL}/${collection.image}` : null}
                         alt={collection.name}
                         fill
                         className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -41,3 +41,4 @@ const CollectionCard = ({ collection }) => {
 };
 
 export default CollectionCard;
+

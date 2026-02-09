@@ -11,7 +11,7 @@ Bienvenido al repositorio de **Eukariae**, una tienda en línea moderna y exclus
 - **Diseño Moderno & Responsivo**: Interfaz de usuario limpia y minimalista, optimizada para todos los dispositivos (móvil, tablet, escritorio).
 - **Arquitectura Escalable**: Estructura de código organizada con componentes reutilizables y convenciones claras.
 - **Rendimiento Optimizado**: Uso de las últimas características de Next.js y optimización de imágenes.
-- **Estilos Globales**: Sistema de diseño basado en variables CSS para una fácil personalización y mantenimiento.
+- **Estilos Globales**: Sistema de diseño basado en Tailwind con tokens de color para una fácil personalización.
 
 ## 🛠️ Tecnologías
 
@@ -25,33 +25,14 @@ Este proyecto está construido sobre un stack robusto y moderno:
 
 ## 🔌 Integración de API
 
-El proyecto consume datos de una API externa desplegada en Render. La configuración se encuentra en [api.js](file:///home/ed-oliveros/Documents/Portfolio/Eukariae/config/api.js).
+El proyecto consume datos de una API externa desplegada en Render. La configuración se encuentra en `config/api.js`.
 
 - **API_BASE_URL**: `https://eukariae-api.onrender.com/api/v1` - Punto de entrada para productos y entradas del blog.
 - **UPLOADS_BASE_URL**: `https://eukariae-api.onrender.com/uploads` - URL base para recursos multimedia (imágenes).
 
-### Consumo de datos (Hook `useApi`)
+### Consumo de datos (ISR)
 
-Para facilitar el llamado a la API, utilizamos un hook personalizado `useApi` ubicado en `hooks/useApi.js`.
-
-**Ejemplo de uso:**
-
-```javascript
-import { useApi } from '../hooks/useApi';
-
-const { data, loading, error } = useApi('/productos');
-
-if (loading) return <p>Cargando...</p>;
-if (error) return <p>Error: {error}</p>;
-
-return (
-    <ul>
-        {data.map(producto => (
-            <li key={producto._id}>{producto.nombre}</li>
-        ))}
-    </ul>
-);
-```
+Las páginas principales usan **Incremental Static Regeneration** (`getStaticProps`) para servir HTML rápido y revalidar contenido cada 5 minutos.
 
 ## 📋 Requisitos Previos
 
@@ -83,7 +64,10 @@ Asegúrate de tener instalado:
 
 ```
 Eukariae/
-├── components/       # Componentes reutilizables (Header, Footer, Productos, etc.)
+├── components/       # Reusable components (layout, sections, UI, etc.)
+├── hooks/            # Custom hooks
+├── config/           # API configuration
+├── lib/              # Shared utilities and constants
 ├── pages/            # Rutas y páginas de la aplicación
 ├── public/           # Activos estáticos (imágenes, iconos)
 ├── styles/           # Estilos globales y variables CSS
@@ -110,7 +94,7 @@ Welcome to the **Eukariae** repository, a modern and exclusive online store for 
 - **Modern & Responsive Design**: Clean and minimalist user interface, optimized for all devices (mobile, tablet, desktop).
 - **Scalable Architecture**: Organized code structure with reusable components and clear conventions.
 - **Optimized Performance**: Use of the latest Next.js features and image optimization.
-- **Global Styles**: Design system based on CSS variables for easy customization and maintenance.
+- **Global Styles**: Design system based on Tailwind tokens for easy customization and maintenance.
 
 ## 🛠️ Tech Stack
 
@@ -124,33 +108,14 @@ This project is built on a robust and modern stack:
 
 ## 🔌 API Integration
 
-The project consumes data from an external API deployed on Render. Configuration can be found in [api.js](file:///home/ed-oliveros/Documents/Portfolio/Eukariae/config/api.js).
+The project consumes data from an external API deployed on Render. Configuration can be found in `config/api.js`.
 
 - **API_BASE_URL**: `https://eukariae-api.onrender.com/api/v1` - Entry point for products and blog posts.
 - **UPLOADS_BASE_URL**: `https://eukariae-api.onrender.com/uploads` - Base URL for multimedia resources (images).
 
-### Data Consumption (`useApi` Hook)
+### Data Fetching (ISR)
 
-To simplify API calls, we use a custom `useApi` hook located in `hooks/useApi.js`.
-
-**Usage Example:**
-
-```javascript
-import { useApi } from '../hooks/useApi';
-
-const { data, loading, error } = useApi('/productos');
-
-if (loading) return <p>Loading...</p>;
-if (error) return <p>Error: {error}</p>;
-
-return (
-    <ul>
-        {data.map(product => (
-            <li key={product._id}>{product.nombre}</li>
-        ))}
-    </ul>
-);
-```
+Core pages use **Incremental Static Regeneration** (`getStaticProps`) to serve fast HTML and revalidate content every 5 minutes.
 
 ## 📋 Prerequisites
 
@@ -182,7 +147,10 @@ Ensure you have installed:
 
 ```
 Eukariae/
-├── components/       # Reusable components (Header, Footer, Products, etc.)
+├── components/       # Reusable components (layout, sections, UI, etc.)
+├── hooks/            # Custom hooks
+├── config/           # API configuration
+├── lib/              # Shared utilities and constants
 ├── pages/            # App routes and pages
 ├── public/           # Static assets (images, icons)
 ├── styles/           # Global styles and CSS variables

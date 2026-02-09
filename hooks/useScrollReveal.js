@@ -5,6 +5,7 @@ const useScrollReveal = (threshold = 0.1) => {
     const ref = useRef(null);
 
     useEffect(() => {
+        // Reveal once when the element crosses the threshold
         const observer = new IntersectionObserver(
             ([entry]) => {
                 if (entry.isIntersecting) {

@@ -1,23 +1,20 @@
-import { Layout } from "../components/Layout/Layout";
+import { Layout } from "@layout/Layout";
 import '../styles/global.css';
+import '@fontsource/poppins/200.css';
+import '@fontsource/poppins/300.css';
+import '@fontsource/poppins/400.css';
+import '@fontsource/poppins/500.css';
+import '@fontsource/poppins/600.css';
 import { useEffect } from "react";
-import { useApi } from "../hooks/useApi.js";
 
 export default function MyApp({ Component, pageProps }) {
-    const { data: config } = useApi('/config');
-
     useEffect(() => {
         const theme = localStorage.getItem('theme') || 'light';
-        document.body.setAttribute('data-theme', theme);
-        if (theme === 'dark') {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
+        document.documentElement.classList.toggle('dark', theme === 'dark');
     }, []);
 
     return (
-        <Layout config={config}>
+        <Layout>
             <Component {...pageProps} />
         </Layout>
     )

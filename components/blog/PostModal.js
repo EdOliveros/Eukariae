@@ -1,11 +1,13 @@
-const Entrada = ({ selectedPost, setSelectedPost }) => {
+import { IconX } from '@tabler/icons-react'
+
+const PostModal = ({ selectedPost, setSelectedPost }) => {
     return (
         <div className="fixed inset-0 z-[2000] flex items-center justify-center p-4 bg-black bg-opacity-80 backdrop-blur-sm transition-opacity">
-            <div className="bg-bg-base dark:bg-[#1e1e1e] w-full max-w-5xl h-[90vh] rounded-base shadow-2xl overflow-hidden flex flex-col">
-                <div className="flex justify-between items-center p-6 border-b dark:border-[#3a3a3a]">
-                    <h2 className="text-2xl font-bold dark:text-[#e0e0e0]">{selectedPost.title}</h2>
-                    <button onClick={() => setSelectedPost(null)} className="text-gray-500 hover:text-text-base dark:hover:text-[#e0e0e0]">
-                        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" /></svg>
+            <div className="bg-bg-base dark:bg-card-bg-dark w-full max-w-5xl h-[90vh] rounded-base shadow-2xl overflow-hidden flex flex-col">
+                <div className="flex justify-between items-center p-6 border-b dark:border-secondary-dark">
+                    <h2 className="text-2xl font-bold dark:text-text-base-dark">{selectedPost.title}</h2>
+                    <button onClick={() => setSelectedPost(null)} className="text-gray-500 hover:text-text-base dark:hover:text-text-base-dark">
+                        <IconX className="w-8 h-8" stroke={1.5} />
                     </button>
                 </div>
                 <div className="flex-grow overflow-y-auto p-8">
@@ -21,7 +23,7 @@ const Entrada = ({ selectedPost, setSelectedPost }) => {
                         </div>
                     </div>
                 </div>
-                <div className="p-6 border-t dark:border-[#3a3a3a] text-right">
+                <div className="p-6 border-t dark:border-secondary-dark text-right">
                     <button onClick={() => setSelectedPost(null)} className="bg-accent text-white px-8 py-2 rounded-base font-bold hover:opacity-90 transition-opacity">
                         Cerrar
                     </button>
@@ -31,4 +33,4 @@ const Entrada = ({ selectedPost, setSelectedPost }) => {
     )
 }
 
-export default Entrada;
+export default PostModal;

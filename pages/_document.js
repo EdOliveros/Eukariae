@@ -6,7 +6,19 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
-        <link rel="shortcut icon" href="@public/assets/favicon.ico" />
+          <link rel="shortcut icon" href="/assets/favicon.ico" />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                (function() {
+                  try {
+                    var theme = localStorage.getItem('theme') || 'light';
+                    if (theme === 'dark') document.documentElement.classList.add('dark');
+                  } catch (e) {}
+                })();
+              `,
+            }}
+          />
         </Head>
         <body>
           <Main />

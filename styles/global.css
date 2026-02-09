@@ -2,37 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
-
-:root {
-    --primary-color: #CAC2B5;
-    --secondary-color: #E4E4E4;
-    --accent-color: #8b8070;
-    --text-color: #1a1a1a;
-    --bg-color: #ffffff;
-    --card-bg: #ffffff;
-    --modal-bg: #ffffff;
-    --logo-dark: var(--text-color);
-    --logo-light: var(--primary-color);
-    --font-main: 'Poppins', sans-serif;
-    --border-radius: 8px;
-    --transition: all 0.3s ease;
-    --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
-
-[data-theme='dark'] {
-    --primary-color: #2c2c2c;
-    --secondary-color: #3a3a3a;
-    --accent-color: #d4c5b0;
-    --text-color: #e0e0e0;
-    --bg-color: #121212;
-    --card-bg: #1e1e1e;
-    --modal-bg: #1e1e1e;
-}
-
 @layer base {
     body {
-        @apply font-sans antialiased bg-bg-base text-text-base transition-colors duration-300;
+        @apply font-sans antialiased bg-bg-base text-text-base dark:bg-bg-base-dark dark:text-text-base-dark transition-colors duration-300;
     }
 }
 

@@ -3,9 +3,11 @@ import imageGaleri1 from '@public/assets/Wall-papers-4K_Danta.jpg'
 import imageGaleri2 from '@public/assets/Wall-papers-4K_Epitome.jpg'
 import imageGaleri3 from '@public/assets/Wall-papers-4K_Jaguar.jpg'
 import imageGaleri4 from '@public/assets/Wall-papers-4K_Rana.jpg'
-import SafeImage from '../UI/SafeImage'
-import useScrollReveal from '../../hooks/useScrollReveal'
+import SafeImage from '@ui/SafeImage'
+import useScrollReveal from '@hooks/useScrollReveal'
 import Link from 'next/link'
+import { IconChevronLeft, IconChevronRight } from '@tabler/icons-react'
+import { ROUTES } from '@constants/routes'
 
 const slides = [
   {
@@ -13,14 +15,14 @@ const slides = [
     title: 'Descubre la Belleza Natural',
     description: 'Explora nuestra colección inspirada en la biodiversidad.',
     cta: 'Ver Colección',
-    href: '/productos'
+    href: ROUTES.PRODUCTS
   },
   {
     image: imageGaleri2,
     title: 'Arte y Conservación',
     description: 'Cada pieza cuenta una historia de nuestro entorno.',
     cta: 'Leer Más',
-    href: '/blog'
+    href: ROUTES.BLOG
   },
   {
     image: imageGaleri3,
@@ -31,14 +33,15 @@ const slides = [
     image: imageGaleri4,
     title: 'Protege la Vida',
     description: 'Únete a nuestra misión de conservación.',
-  }
+  },
 ];
 
-const Galeria = () => {
+const GallerySection = () => {
   const [heroRef, isHeroVisible] = useScrollReveal();
   const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
+    // Auto-rotate hero slides
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 5000);
@@ -49,7 +52,7 @@ const Galeria = () => {
   const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <div ref={heroRef} className={`relative w-full h-[100vh] sm:h-[70vh] lg:h-[100vh] overflow-hidden bg-bg-base transition-opacity duration-1000 ${isHeroVisible ? 'opacity-100' : 'opacity-0'}`}>
+    <div ref={heroRef} className={`relative w-full h-[100vh] sm:h-[70vh] lg:h-[100vh] overflow-hidden bg-bg-base dark:bg-bg-base-dark transition-opacity duration-1000 ${isHeroVisible ? 'opacity-100' : 'opacity-0'}`}>
       {slides.map((slide, index) => (
         <div
           key={index}
@@ -62,6 +65,7 @@ const Galeria = () => {
             className="object-cover object-center w-full h-full"
             alt={slide.title}
             priority={index === 0}
+            sizes="100vw"
           />
           <div className="absolute inset-0 z-30 flex flex-col items-center justify-center text-center text-white px-6">
             <h2 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg transform transition-transform duration-700 delay-300 translate-y-0 opacity-100">
@@ -85,14 +89,14 @@ const Galeria = () => {
         className="absolute left-4 top-1/2 -translate-y-1/2 z-40 p-2 text-white bg-black bg-opacity-20 rounded-full hover:bg-opacity-40 transition-all"
         aria-label="Previous slide"
       >
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
+        <IconChevronLeft className="w-8 h-8" stroke={1.5} />
       </button>
       <button
         onClick={nextSlide}
         className="absolute right-4 top-1/2 -translate-y-1/2 z-40 p-2 text-white bg-black bg-opacity-20 rounded-full hover:bg-opacity-40 transition-all"
         aria-label="Next slide"
       >
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+        <IconChevronRight className="w-8 h-8" stroke={1.5} />
       </button>
 
       {/* Indicators */}
@@ -116,4 +120,4 @@ const Galeria = () => {
   )
 }
 
-export { Galeria };
+export { GallerySection };

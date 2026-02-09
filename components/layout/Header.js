@@ -1,23 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { SunIcon } from '@components/Sun/sun.jsx';
-import { MoonIcon } from '@components/Moon/moon.jsx';
+import { ROUTES } from '@constants/routes';
+import { IconMoonStars, IconSun } from '@tabler/icons-react';
 import Image from 'next/image';
 
 const NAV_LINKS = [
-  { name: 'Home', href: '/' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'Products', href: '/productos' },
-  { name: 'About', href: '/quienes-somos' },
-  { name: 'Contact', href: '/contacto' },
+  { name: 'Inicio', href: ROUTES.HOME },
+  { name: 'Blog', href: ROUTES.BLOG },
+  { name: 'Productos', href: ROUTES.PRODUCTS },
+  { name: 'Nosotros', href: ROUTES.ABOUT },
+  { name: 'Contacto', href: ROUTES.CONTACT },
 ];
 
-const Header = ({ config }) => {
+const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
     const isDark = localStorage.getItem('theme') === 'dark';
+    // Persisted theme preference is stored in localStorage
     applyTheme(isDark);
   }, []);
 
@@ -30,13 +31,20 @@ const Header = ({ config }) => {
   const logoUrl = '/assets/logo.svg';
 
   return (
-    <header className="sticky top-0 z-[1050] w-full bg-primary dark:bg-[#2c2c2c] text-text-base dark:text-[#e0e0e0] shadow-md transition-colors duration-300 py-3 px-6 md:px-12">
+    <header className="sticky top-0 z-[1050] w-full bg-primary dark:bg-primary-dark text-text-base dark:text-text-base-dark shadow-md transition-colors duration-300 py-3 px-6 md:px-12">
       <nav className="container mx-auto flex items-center justify-between">
 
         {/* Logo */}
-        <a href="/">
-          <Image src={logoUrl} alt="Logo" width={80} height={80} />
-        </a>
+        <Link href={ROUTES.HOME} aria-label="Inicio Eukariae">
+          <Image
+            src={logoUrl}
+            alt="Eukariae logo"
+            width={80}
+            height={80}
+            className="h-20 w-auto transition-all duration-300 dark:brightness-0 dark:invert"
+            priority
+          />
+        </Link>
 
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center gap-8">
@@ -55,9 +63,9 @@ const Header = ({ config }) => {
             className="flex h-10 w-10 items-center justify-center rounded-full transition-all hover:rotate-[15deg] hover:bg-gray-100 dark:hover:bg-gray-800"
           >
             {isDarkMode ? (
-              <SunIcon className="h-6 w-6" />
+              <IconSun className="h-6 w-6" stroke={1.5} />
             ) : (
-              <MoonIcon className="h-6 w-6" />
+              <IconMoonStars className="h-6 w-6" stroke={1.5} />
             )}
           </button>
 

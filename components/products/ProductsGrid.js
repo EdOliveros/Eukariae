@@ -4,6 +4,7 @@ import { UPLOADS_BASE_URL } from '@config/api';
 import SafeImage from '@ui/SafeImage';
 import InfoNotFound from '@ui/InfoNotFound';
 import { ROUTES } from '@constants/routes';
+import { resolveImageUrl } from 'lib/media';
 
 const ProductsGrid = ({ items = [], loading, error }) => {
     const [selectedProduct, setSelectedProduct] = useState(null);
@@ -31,7 +32,7 @@ const ProductsGrid = ({ items = [], loading, error }) => {
                             <SafeImage
                                 width={500}
                                 height={500}
-                                src={`${UPLOADS_BASE_URL}/${item.image}`}
+                                src={resolveImageUrl(item.image, UPLOADS_BASE_URL)}
                                 className="object-fit-cover w-full h-full transition-transform duration-500 group-hover:scale-110"
                                 alt={item.name}
                             />
@@ -77,7 +78,7 @@ const ProductsGrid = ({ items = [], loading, error }) => {
                                         <SafeImage
                                             width={600}
                                             height={600}
-                                            src={`${UPLOADS_BASE_URL}/${selectedProduct.image}`}
+                                            src={resolveImageUrl(selectedProduct.image, UPLOADS_BASE_URL)}
                                             alt={selectedProduct.name}
                                             className="object-cover w-full h-full"
                                         />

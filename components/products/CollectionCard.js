@@ -2,14 +2,15 @@ import Link from 'next/link';
 import { IconArrowRight } from '@tabler/icons-react';
 import SafeImage from '@ui/SafeImage';
 import { UPLOADS_BASE_URL } from '@config/api';
+import { resolveImageUrl } from 'lib/media';
 
 const CollectionCard = ({ collection }) => {
     return (
-        <Link href={`/products?category=${collection._id}`} className="group block h-full">
+        <Link href={`/products/${collection._id}`} className="group block h-full">
             <div className="flex flex-col h-full bg-white dark:bg-card-bg-dark rounded-base shadow-sm hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 overflow-hidden border border-transparent hover:border-accent/20">
                 <div className="relative h-72 overflow-hidden">
                     <SafeImage
-                        src={collection.image ? `${UPLOADS_BASE_URL}/${collection.image}` : null}
+                        src={resolveImageUrl(collection.image, UPLOADS_BASE_URL)}
                         alt={collection.name}
                         fill
                         className="object-cover transition-transform duration-700 group-hover:scale-110"

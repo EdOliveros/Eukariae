@@ -4,6 +4,7 @@ import InfoNotFound from '@ui/InfoNotFound'
 import { ProductsGrid } from '@products/ProductsGrid'
 import { API_BASE_URL, UPLOADS_BASE_URL } from '@config/api'
 import { ROUTES } from '@constants/routes'
+import { resolveImageUrl } from 'lib/media'
 
 /** @param {{ collection?: any | null, products?: any[] }} props */
 const CollectionPage = ({ collection, products = [] }) => {
@@ -20,13 +21,13 @@ const CollectionPage = ({ collection, products = [] }) => {
         )
     }
 
-    const collectionProducts = products.filter((p) => p.category === collection._id)
+    const collectionProducts = products.filter((p) => (p.category?._id ?? p.category) === collection._id)
 
     return (
         <div className="bg-bg-base dark:bg-bg-base-dark transition-colors duration-300">
             <div className="relative w-full h-[60vh] min-h-[500px] overflow-hidden">
                 <SafeImage
-                    src={collection.image ? `${UPLOADS_BASE_URL}/${collection.image}` : null}
+                    src={resolveImageUrl(collection.image, UPLOADS_BASE_URL)}
                     alt={collection.name}
                     fill
                     className="object-cover"
